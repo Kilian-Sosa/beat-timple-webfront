@@ -1,10 +1,10 @@
+import { BeatGenerator } from "../components/BeatCreation/BeatGenerator";
 
 
 export default function BeatCreation() {
   return (
     <div>
-      <h1>Beat Creation</h1>
-      <p>Welcome to the beat creation page!</p>
+        <BeatGenerator/>
     </div>
   );
 }
