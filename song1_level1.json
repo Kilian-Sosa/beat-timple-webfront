@@ -1,0 +1,30 @@
+{
+    "difficulty": 1,
+    "seed": [
+        {
+            "time": 0,
+            "locationY": "Top",
+            "locationX": "Left"
+        },
+        {
+            "time": 0,
+            "locationY": "Top",
+            "locationX": "Right"
+        },
+        {
+            "time": 2,
+            "locationY": "Top",
+            "locationX": "Right"
+        },
+        {
+            "time": 4,
+            "locationY": "Bottom",
+            "locationX": "Left"
+        },
+        {
+            "time": 4.5,
+            "locationY": "Bottom",
+            "locationX": "Right"
+        }
+    ]
+}

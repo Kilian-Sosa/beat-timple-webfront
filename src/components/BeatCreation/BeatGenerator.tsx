@@ -1,11 +1,16 @@
 import React, { useState, useRef, ChangeEvent, useEffect } from "react";
+import './BeatGenerator.scss'
+import { BeatFormsList } from "./BeatFormsList";
 
 export const BeatGenerator: React.FC = () => {
   const [audioSelected, setAudioSelected] = useState<string | null>(null);
   const [marks, setMarks] = useState<number[]>([]);
+  
   const [progressWidth, setProgressWidth] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(false); // New state variable
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  const [selectedMark, setSelectedMark] = useState(0)
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -69,48 +74,49 @@ export const BeatGenerator: React.FC = () => {
   }, []);
 
   return (
-    <div>
+    <>
+    <div className="beat-generator-cont">
       <input type="file" onChange={handleFileChange} />
+      <div className="buttons-cont">
       <button onClick={handleMarkButtonClick} disabled={!audioSelected || !isPlaying}>
         Add Mark
       </button>
+      </div>
 
-      <div style={{ position: "relative", height: "20px", backgroundColor: "#ccc", marginTop: "10px" }}>
-        <div
+      <div className="marks-cont" >
+        <div className="progress"
           style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            height: "100%",
             width: `${progressWidth}%`,
-            backgroundColor: "green",
           }}
         ></div>
         {marks.map((mark, index) => (
           <div
+            className={selectedMark === index ? 'mark selected' : 'mark'}
             key={index}
             style={{
-              position: "absolute",
-              top: 0,
               left: `${(mark / (audioRef.current?.duration || 1)) * 100}%`,
-              transform: "translateX(-50%)",
-              backgroundColor: "white",
-              width: "4px",
-              height: "100%",
             }}
           ></div>
         ))}
       </div>
 
-      <div>
-        {audioSelected && (
-          <>
-            <audio ref={audioRef} src={audioSelected} style={{ display: 'none' }} />
-            <button onClick={handlePlayPause}>{isPlaying ? 'Pause' : 'Play'}</button>
-          </>
-        )}
-      </div>
-      <button disabled={!audioSelected} onClick={() => console.log(marks)}>Generate</button>
-    </div>
+      <section className="buttons-cont">
+
+        <div>
+          {audioSelected && (
+            <>
+              <audio ref={audioRef} src={audioSelected} style={{ display: 'none' }} />
+              <button onClick={handlePlayPause}>{isPlaying ? 'Pause' : 'Play'}</button>
+            </>
+          )}
+        </div>
+        <button disabled={!audioSelected} onClick={() => console.log(marks)}>Generate</button>
+      </section >
+   
+
+     { marks && <BeatFormsList marks = {marks} setSelectedMark={setSelectedMark}/> }
+   
+     </div>
+   </>
   );
 };
