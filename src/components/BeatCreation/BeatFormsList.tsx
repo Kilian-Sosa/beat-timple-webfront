@@ -22,7 +22,8 @@ export const BeatFormsList = ({
     <>
       <div>BeatFormsList</div>
 
-      <button onClick={() => setAllowExtra(true)}>Añadir caja extra</button>
+      TODO: Fix extra box
+      <button onClick={() => setAllowExtra(true)}>Add extra box</button>
 
       {marks.map((mark: Mark, index: number) => (
         <div key={index}>
@@ -35,6 +36,7 @@ export const BeatFormsList = ({
                     time: mark.time,
                     locationX: "",
                     locationY: "",
+                    hit: ""
                   }}
                   setMarks={setMarks}
                   marks={marks}

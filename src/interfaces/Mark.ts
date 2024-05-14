@@ -3,6 +3,7 @@ interface Mark {
     time: number;
     locationX: string;
     locationY: string;
+    hit: string;
 }
 
 export default Mark;

@@ -35,50 +35,93 @@ export const BeatForm: React.FC<BeatFormProps> = ({
         value={formValues.test}
         onChange={handleInputChange}
       />
-      <label htmlFor="Left">Left</label>
+
+      <span>Side of the Platform</span>
+      <label htmlFor="LeftLocX">Left</label>
       <input
         type="radio"
-        id="Left"
+        id="LeftLocX"
         name="locationX"
         value="Left"
         checked={formValues.locationX === "Left"}
         onChange={handleInputChange}
       />
-      <label htmlFor="Center">Center</label>
+      <label htmlFor="CenterLocX">Center</label>
       <input
         type="radio"
-        id="Center"
+        id="CenterLocX"
         name="locationX"
         value="Center"
         checked={formValues.locationX === "Center"}
         onChange={handleInputChange}
       />
-      <label htmlFor="Right">Right</label>
+      <label htmlFor="RightLocX">Right</label>
       <input
         type="radio"
-        id="Right"
+        id="RightLocX"
         name="locationX"
         value="Right"
         checked={formValues.locationX === "Right"}
         onChange={handleInputChange}
       />
       <hr />
-      <label htmlFor="Top">Top</label>
+
+      <span>Vertical Position</span>
+      <label htmlFor="TopLocY">Top</label>
       <input
         type="radio"
-        id="Top"
+        id="TopLocY"
         name="locationY"
         value="Top"
         checked={formValues.locationY === "Top"}
         onChange={handleInputChange}
       />
-      <label htmlFor="Down">Down</label>
+      <label htmlFor="DownLocY">Down</label>
       <input
         type="radio"
-        id="Down"
+        id="DownLocY"
         name="locationY"
         value="Down"
         checked={formValues.locationY === "Down"}
+        onChange={handleInputChange}
+      />
+      <hr />
+
+      <span>Hit Side</span>
+      <label htmlFor="LeftHit">Left</label>
+      <input
+        type="radio"
+        id="LeftHit"
+        name="hit"
+        value="Left"
+        checked={formValues.hit === "Left"}
+        onChange={handleInputChange}
+      />
+      <label htmlFor="RightHit">Right</label>
+      <input
+        type="radio"
+        id="RightHit"
+        name="hit"
+        value="Right"
+        checked={formValues.hit === "Right"}
+        onChange={handleInputChange}
+      />
+      <label htmlFor="TopHit">Top</label>
+      <input
+        type="radio"
+        id="TopHit"
+        name="hit"
+        value="Top"
+        checked={formValues.hit === "Top"}
+        onChange={handleInputChange}
+      />
+      <label htmlFor="BottomHit">Bottom</label>
+      <input
+        type="radio"
+        id="BottomHit"
+        name="hit"
+        value="Bottom"
+        checked={formValues.hit === "Bottom"}
         onChange={handleInputChange}
       />
 

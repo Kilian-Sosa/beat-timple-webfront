@@ -45,7 +45,8 @@ export const BeatGenerator: React.FC = () => {
         id: marks.length,
         time: currentTime,
         locationX: "",
-        locationY: ""
+        locationY: "",
+        hit: ""
       }]);
     }
   };
