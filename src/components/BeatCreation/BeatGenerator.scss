@@ -2,92 +2,103 @@
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100vh;
-    padding: 1em;
+    padding: 0 1em;
 
-    .marks-cont {
-        position: relative;
-        height: 10px;
-        background-color: #ccc;
-        border-radius: 99px;
-        margin-top: 10px;
-  
+    .beat-generator-content{
+        height: 100%;
+        max-width: 900px;
+        width: 80%;
+     
 
-        .progress {
-            border-radius: 99px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            background-color: #7a73f4;
-        }
-
-        .mark {
-            position: absolute;
-            top: 0;
-            background-color: #fff;
-            width: 2px;
-            height: 100%;
-
-            &.selected {
-                background-color: red;
-            }
-        }
-    }
-
-    .buttons-cont {
-        display: flex;
-
-      
-    }
-
-    .music-input{
-        display: none;
-    }
-
-    .input-song{
-        display: grid;
-        grid-template-columns: 60px auto;
-        align-items: center;
-        .music-input-icons{
+        .marks-cont {
             position: relative;
-            width: 50px;
-            cursor: pointer;
-            filter: drop-shadow(3px 5px 2px rgba(148, 18, 146, 0.8));            
-
+            height: 10px;
+            background-color: #ccc;
+            border-radius: 99px;
+            margin-top: 10px;
+            filter: drop-shadow(0px 0px 10px rgba(148, 18, 146, 0.4));            
     
-            &:hover{
-                transform: scale(1.1);
-            }
-            &.dancing:hover{
-                transform: none;
-            }
-            
-            
-            .arrow{
-                width: 20px;
+    
+            .progress {
+                border-radius: 99px;
                 position: absolute;
-                bottom: 1em;
-                left: 0.2em;
-                z-index: -1;
-                animation: moveTop 0.5s infinite alternate;
-                
+                top: 0;
+                left: 0;
+                height: 100%;
+                background-color: #7a73f4;
             }
-
-
-            &.dancing{
-                cursor: default;
-                .note{
-                    animation: dancing 0.5s infinite alternate ;
-                    animation-delay: 1s;
+    
+            .mark {
+                position: absolute;
+                top: 0;
+                background-color: #fff;
+                width: 2px;
+                height: 100%;
+    
+                &.selected {
+                    background-color: red;
                 }
             }
-
         }
-
-       
+    
+        .buttons-cont {
+            display: flex;
+    
+          
+        }
+    
+        .music-input{
+            display: none;
+        }
+    
+        .input-song{
+            display: grid;
+            grid-template-columns: 60px auto;
+            align-items: center;
+            .music-input-icons{
+                position: relative;
+                width: 50px;
+                cursor: pointer;
+                filter: drop-shadow(3px 5px 2px rgba(148, 18, 146, 0.8));            
+    
+        
+                &:hover{
+                    transform: scale(1.1);
+                }
+                &.dancing:hover{
+                    transform: none;
+                }
+                
+                
+                .arrow{
+                    width: 20px;
+                    position: absolute;
+                    bottom: 1em;
+                    left: 0.2em;
+                    z-index: -1;
+                    animation: moveTop 0.5s infinite alternate;
+                    
+                }
+    
+    
+                &.dancing{
+                    cursor: default;
+                    .note{
+                        animation: dancing 0.5s infinite alternate ;
+                        animation-delay: 1s;
+                    }
+                }
+    
+            }
+    
+           
+        }
     }
+
 
 }
 

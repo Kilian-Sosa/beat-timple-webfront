@@ -85,7 +85,7 @@ export const BeatGenerator: React.FC = () => {
   return (
     <>
     <div className="beat-generator-cont">
-     
+     <div className="beat-generator-content">
       <div className="buttons-cont">
       <button onClick={handleMarkButtonClick} disabled={!audioSelected || !isPlaying}>
         Add Mark
@@ -134,7 +134,7 @@ export const BeatGenerator: React.FC = () => {
    
 
      { marks && <BeatFormsList defaultMarks={marks} setSelectedMark={setSelectedMark}/> }
-   
+     </div>
      </div>
    </>
   );

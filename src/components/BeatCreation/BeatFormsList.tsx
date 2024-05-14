@@ -22,7 +22,7 @@ export const BeatFormsList = ({
     <>
       <div>BeatFormsList</div>
 
-      TODO: Fix extra box
+      {/* TODO: Fix extra box */}
       <button onClick={() => setAllowExtra(true)}>Add extra box</button>
 
       {marks.map((mark: Mark, index: number) => (
