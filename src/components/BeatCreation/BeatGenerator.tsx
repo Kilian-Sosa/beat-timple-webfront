@@ -1,10 +1,13 @@
 import React, { useState, useRef, ChangeEvent, useEffect } from "react";
 import './BeatGenerator.scss'
 import { BeatFormsList } from "./BeatFormsList";
+import Mark from "../../interfaces/Mark";
 
 export const BeatGenerator: React.FC = () => {
   const [audioSelected, setAudioSelected] = useState<string | null>(null);
-  const [marks, setMarks] = useState<number[]>([]);
+  const [marks, setMarks] = useState<Mark[]>([]);
+  const arrowIcon= './assets/images/icons/arrow.svg'
+  const noteIcon= './assets/images/icons/note.svg'
   
   const [progressWidth, setProgressWidth] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(false); // New state variable
@@ -38,7 +41,12 @@ export const BeatGenerator: React.FC = () => {
   const handleMarkButtonClick = () => {
     if (audioRef.current) {
       const currentTime = audioRef.current.currentTime;
-      setMarks([...marks, currentTime]);
+      setMarks([...marks, {
+        id: marks.length,
+        time: currentTime,
+        locationX: "",
+        locationY: ""
+      }]);
     }
   };
 
@@ -76,12 +84,21 @@ export const BeatGenerator: React.FC = () => {
   return (
     <>
     <div className="beat-generator-cont">
-      <input type="file" onChange={handleFileChange} />
+     
       <div className="buttons-cont">
       <button onClick={handleMarkButtonClick} disabled={!audioSelected || !isPlaying}>
         Add Mark
       </button>
       </div>
+
+    <section className="input-song">
+      <label className={"music-input-icons " + (isPlaying ? "dancing": "")} htmlFor="music">
+        <img className="arrow" src={arrowIcon} alt="" />
+        <img className="note" src={noteIcon} alt="" />
+      </label>
+      <input disabled={isPlaying} className="music-input" type="file" id="music"  onChange={handleFileChange} />
+
+
 
       <div className="marks-cont" >
         <div className="progress"
@@ -94,11 +111,12 @@ export const BeatGenerator: React.FC = () => {
             className={selectedMark === index ? 'mark selected' : 'mark'}
             key={index}
             style={{
-              left: `${(mark / (audioRef.current?.duration || 1)) * 100}%`,
+              left: `${(mark.time / (audioRef.current?.duration || 1)) * 100}%`,
             }}
           ></div>
         ))}
       </div>
+      </section>
 
       <section className="buttons-cont">
 
@@ -114,7 +132,7 @@ export const BeatGenerator: React.FC = () => {
       </section >
    
 
-     { marks && <BeatFormsList marks = {marks} setSelectedMark={setSelectedMark}/> }
+     { marks && <BeatFormsList defaultMarks={marks} setSelectedMark={setSelectedMark}/> }
    
      </div>
    </>

@@ -2,4 +2,14 @@
     display: flex;
     padding: 0.5em;
     justify-content: space-between;
+    p{
+        font-family: 'LuckiestGuy';
+       &:hover{
+            opacity: 0.8;
+       }
+    }
+
+    a{
+        text-decoration: none;
+    }
 }

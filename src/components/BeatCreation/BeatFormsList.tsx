@@ -1,48 +1,75 @@
-import { useState } from "react"
-import './BeatFormList.scss'
+import { useEffect, useState } from "react";
+import "./BeatFormList.scss";
+import Mark from "../../interfaces/Mark";
+import { BeatForm } from "./BeatForm";
 
+export const BeatFormsList = ({
+  defaultMarks,
+  setSelectedMark,
+}: {
+  defaultMarks: Mark[];
+  setSelectedMark: (value: number) => void;
+}) => {
+  const [position, setPosition] = useState<number>(0);
+  const [allowExtra, setAllowExtra] = useState<boolean>(false);
+  const [marks, setMarks] = useState<Mark[]>(defaultMarks);
 
-export const BeatFormsList = ({ marks, setSelectedMark }: { marks: number[], setSelectedMark: (value: number) => void }) => {
+  useEffect(() => {
+    setMarks(defaultMarks); // Update marks whenever defaultMarks change
+  }, [defaultMarks]);
 
-    const [position, setPosition] = useState<number>(0)
+  return (
+    <>
+      <div>BeatFormsList</div>
 
-    return (
-        <>
-            <div>BeatFormsList</div>
+      <button onClick={() => setAllowExtra(true)}>Añadir caja extra</button>
 
-            {
-                marks.map((mark: number, index: number) => (
-                    <div key={index}>
-                        {index === position && (
-                            <>
-                                <div>
-                                    <input type="text" id="time" value={mark} onChange={() => console.log('tu puta madre')} />
+      {marks.map((mark: Mark, index: number) => (
+        <div key={index}>
+          {index === position && (
+            <>
+              {allowExtra && (
+                <BeatForm
+                  mark={{
+                    id: defaultMarks.length,
+                    time: mark.time,
+                    locationX: "",
+                    locationY: "",
+                  }}
+                  setMarks={setMarks}
+                  marks={marks}
+                />
+              )}
 
-                                    <label htmlFor="Left">Left</label>
-                                    <input type="radio" id="Left" name="locationX" value="Left" />
-                                    <label htmlFor="Center">Center</label>
-                                    <input type="radio" id="Center" name="locationX" value="Center" />
-                                    <label htmlFor="Right">Right</label>
-                                    <input type="radio" id="Right" name="locationX" value="Right" />
-                                    <button>×</button>
-                                </div>
-                                {
-                                    index > 0 &&
-                                    <button onClick={() => { setPosition(index - 1); setSelectedMark(index - 1) }}>prev</button>
-                                }
+              <BeatForm mark={mark} setMarks={setMarks} marks={marks} />
 
-                                {
-                                    index < marks.length - 1 &&
-                                    <button onClick={() => { setPosition(index + 1); setSelectedMark(index + 1) }}>next</button>
+              <button
+                disabled={index < 1}
+                onClick={() => {
+                  setPosition(index - 1);
+                  setSelectedMark(index - 1);
+                }}
+              >
+                prev
+              </button>
 
-                                }
-                            </>
-                        )}
-                    </div>
-                ))
-            }
+              <span>
+                {index + 1}/{defaultMarks.length}
+              </span>
 
-
-        </>
-    )
-}
+              <button
+                disabled={index == defaultMarks.length - 1}
+                onClick={() => {
+                  setPosition(index + 1);
+                  setSelectedMark(index + 1);
+                }}
+              >
+                next
+              </button>
+            </>
+          )}
+        </div>
+      ))}
+    </>
+  );
+};

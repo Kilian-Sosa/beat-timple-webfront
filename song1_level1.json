@@ -2,26 +2,31 @@
     "difficulty": 1,
     "seed": [
         {
+            "id": 0,
             "time": 0,
             "locationY": "Top",
             "locationX": "Left"
         },
         {
+            "id": 4,
             "time": 0,
             "locationY": "Top",
             "locationX": "Right"
         },
         {
+            "id": 1,
             "time": 2,
             "locationY": "Top",
             "locationX": "Right"
         },
         {
+            "id": 3,
             "time": 4,
             "locationY": "Bottom",
             "locationX": "Left"
         },
         {
+            "id": 2,
             "time": 4.5,
             "locationY": "Bottom",
             "locationX": "Right"
