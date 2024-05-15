@@ -2,34 +2,34 @@ import React, { useEffect } from "react";
 import { useForm } from "../../hooks/useForm";
 import Mark from "../../interfaces/Mark";
 
-interface BeatFormProps {
-  mark: Mark;
-  setMarks: React.Dispatch<React.SetStateAction<Mark[]>>;
-  marks: Mark[];
-}
+// interface BeatFormProps {
+//   mark: Mark;
+//   setMarks: React.Dispatch<React.SetStateAction<Mark[]>>;
+//   marks: Mark[];
+// }
 
-export const BeatForm: React.FC<BeatFormProps> = ({
+export const BeatForm: React.FC<any> = ({
   mark,
   setMarks,
   marks
 }) => {
   const [formValues, handleInputChange, reset] = useForm(mark);
 
-  useEffect(() => {
-    const existingIndex = marks.findIndex((item) => item.id === formValues.id);
-    if (existingIndex === -1) {
-      setMarks([...marks, formValues]);
-      return;
-    }
-    const updatedMarks = [...marks];
-    updatedMarks[existingIndex] = formValues;
-    setMarks(updatedMarks);
-    console.log(marks);
-  }, [formValues]);
+  // useEffect(() => {
+  //   const existingIndex = marks.findIndex((item) => item.id === formValues.id);
+  //   if (existingIndex === -1) {
+  //     setMarks([...marks, formValues]);
+  //     return;
+  //   }
+  //   const updatedMarks = [...marks];
+  //   updatedMarks[existingIndex] = formValues;
+  //   setMarks(updatedMarks);
+  //   console.log(marks);
+  // }, [formValues]);
 
   return (
     <>
-      <input
+      {/* <input
         type="text"
         name="test"
         value={formValues.test}
@@ -125,7 +125,9 @@ export const BeatForm: React.FC<BeatFormProps> = ({
         onChange={handleInputChange}
       />
 
-      <button onClick={reset}>×</button>
+      <button onClick={reset}>×</button> */}
+
+      <h1>pepe</h1>
     </>
   );
 };

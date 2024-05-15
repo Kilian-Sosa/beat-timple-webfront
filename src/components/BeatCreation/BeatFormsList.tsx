@@ -4,25 +4,24 @@ import Mark from "../../interfaces/Mark";
 import { BeatForm } from "./BeatForm";
 
 export const BeatFormsList = ({
-  defaultMarks,
-  setSelectedMark,
+ 
 }: {
   defaultMarks: Mark[];
   setSelectedMark: (value: number) => void;
 }) => {
-  const [position, setPosition] = useState<number>(0);
-  const [allowExtra, setAllowExtra] = useState<boolean>(false);
-  const [marks, setMarks] = useState<Mark[]>(defaultMarks);
+  // const [position, setPosition] = useState<number>(0);
+  // const [allowExtra, setAllowExtra] = useState<boolean>(false);
+  // const [marks, setMarks] = useState<Mark[]>(defaultMarks);
 
-  useEffect(() => {
-    setMarks(defaultMarks); // Update marks whenever defaultMarks change
-  }, [defaultMarks]);
+  // useEffect(() => {
+  //   setMarks(defaultMarks); // Update marks whenever defaultMarks change
+  // }, [defaultMarks]);
 
   return (
     <>
-      <div>BeatFormsList</div>
+      {/* <div>BeatFormsList</div>
 
-      {/* TODO: Fix extra box */}
+      TODO: Fix extra box
       <button onClick={() => setAllowExtra(true)}>Add extra box</button>
 
       {marks.map((mark: Mark, index: number) => (
@@ -71,7 +70,7 @@ export const BeatFormsList = ({
             </>
           )}
         </div>
-      ))}
+      ))} */}
     </>
   );
 };
