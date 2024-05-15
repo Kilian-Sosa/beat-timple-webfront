@@ -15,24 +15,28 @@ export const BeatForm: React.FC<any> = ({
 }) => {
   const [formValues, handleInputChange, reset] = useForm(mark);
 
-  // useEffect(() => {
-  //   const existingIndex = marks.findIndex((item) => item.id === formValues.id);
-  //   if (existingIndex === -1) {
-  //     setMarks([...marks, formValues]);
-  //     return;
-  //   }
-  //   const updatedMarks = [...marks];
-  //   updatedMarks[existingIndex] = formValues;
-  //   setMarks(updatedMarks);
-  //   console.log(marks);
-  // }, [formValues]);
+  useEffect(() => {
+    const existingIndex = marks.findIndex((item:any) => item.id === formValues.id);
+    if (existingIndex === -1) {
+      setMarks([...marks, formValues]);
+      return;
+    }
+    const updatedMarks = [...marks];
+    updatedMarks[existingIndex] = formValues;
+    setMarks(updatedMarks);
+    console.log(marks);
+  }, [formValues]);
 
   return (
     <>
-      {/* <input
+      {/* <h1>BeatForm</h1> */}
+
+<section className="form-cont">
+      <div className="form-content">
+      <input
         type="text"
-        name="test"
-        value={formValues.test}
+        name="time"
+        value={formValues.time}
         onChange={handleInputChange}
       />
 
@@ -64,8 +68,8 @@ export const BeatForm: React.FC<any> = ({
         checked={formValues.locationX === "Right"}
         onChange={handleInputChange}
       />
-      <hr />
-
+   </div>   
+<div className="form-content">
       <span>Vertical Position</span>
       <label htmlFor="TopLocY">Top</label>
       <input
@@ -85,7 +89,9 @@ export const BeatForm: React.FC<any> = ({
         checked={formValues.locationY === "Down"}
         onChange={handleInputChange}
       />
-      <hr />
+   
+      </div>
+<div className="form-content">
 
       <span>Hit Side</span>
       <label htmlFor="LeftHit">Left</label>
@@ -124,10 +130,10 @@ export const BeatForm: React.FC<any> = ({
         checked={formValues.hit === "Bottom"}
         onChange={handleInputChange}
       />
-
-      <button onClick={reset}>×</button> */}
-
-      <h1>pepe</h1>
+  
+  </div>
+  </section>
+      <button onClick={reset}>×</button>
     </>
   );
 };

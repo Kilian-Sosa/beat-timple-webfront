@@ -4,21 +4,74 @@ import Mark from "../../interfaces/Mark";
 import { BeatForm } from "./BeatForm";
 
 export const BeatFormsList = ({
- 
+  defaultMarks,
+  setMarks,
+  setSelectedMark,
 }: {
   defaultMarks: Mark[];
+  setMarks: any;
   setSelectedMark: (value: number) => void;
 }) => {
-  // const [position, setPosition] = useState<number>(0);
-  // const [allowExtra, setAllowExtra] = useState<boolean>(false);
-  // const [marks, setMarks] = useState<Mark[]>(defaultMarks);
+  useEffect(() => {
+    setMarks(defaultMarks.sort((a, b) => a.time - b.time));
+  }, [defaultMarks.length]);
 
-  // useEffect(() => {
-  //   setMarks(defaultMarks); // Update marks whenever defaultMarks change
-  // }, [defaultMarks]);
+  const showForm = (index: number) => {
+    setMarks((prev: Mark[]) => {
+      const copy = [...prev];
+      copy.forEach((mark, i) => {
+        mark.formVisible = i === index ? !mark.formVisible : false;
+      });
+      return copy;
+    });
+    setSelectedMark(index);
+  }
+
 
   return (
     <>
+      <div className="beat-form-cont">
+        {defaultMarks.map((mark: Mark, index: number) => (
+          <div key={index}>
+            <button
+              onClick={() => {
+                showForm(index)
+              }}
+            >
+              {!mark.formVisible
+                ? `Mostrar ${mark.time}`
+                : "Ocultar" + mark.time}
+            </button>
+            {mark.formVisible && (
+              <>
+                <button
+                  onClick={() => {
+                    setMarks((prev: Mark[]) => {
+                      const copy = [...prev];
+                      copy.push({
+                        id: defaultMarks.length,
+                        time: mark.time,
+                        locationX: "",
+                        locationY: "",
+                        hit: "",
+                        formVisible: true,
+                      });
+                      return copy;
+                    });
+                  }}
+                >
+                  Add extra box
+                </button>
+                <BeatForm
+                  mark={mark}
+                  setMarks={setMarks}
+                  marks={defaultMarks}
+                />
+              </>
+            )}
+          </div>
+        ))}
+      </div>
       {/* <div>BeatFormsList</div>
 
       TODO: Fix extra box

@@ -46,7 +46,8 @@ export const BeatGenerator: React.FC = () => {
         time: currentTime,
         locationX: "",
         locationY: "",
-        hit: ""
+        hit: "",
+        formVisible: false,
       }]);
     }
   };
@@ -133,7 +134,7 @@ export const BeatGenerator: React.FC = () => {
       </section >
    
 
-     { marks && <BeatFormsList defaultMarks={marks} setSelectedMark={setSelectedMark}/> }
+     { marks && <BeatFormsList defaultMarks={marks} setMarks={setMarks} setSelectedMark={setSelectedMark}/> }
      </div>
      </div>
    </>

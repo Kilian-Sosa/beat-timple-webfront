@@ -1,5 +1,21 @@
-input{
-    background-color: rgba(95, 70, 95, 0.178);
-    border: none;
-    padding: 0.5em;
+
+.beat-form-cont{
+height: 350px;
+overflow-y: auto;
+
+.form-cont{
+    margin: 1em 0;
+    border-top:2px solid white;
+    border-bottom: 2px solid white;
+}
+    input{
+        background-color: rgba(95, 70, 95, 0.178);
+        border: none;
+        padding: 0.5em;
+    }
+
+    // .show-form-btn{
+    //     height: 80px;
+    //     width: 250px;
+    // }
 }
