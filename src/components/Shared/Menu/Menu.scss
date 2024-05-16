@@ -1,6 +1,9 @@
 .menu-cont{
     display: flex;
-    padding: 0.5em;
+    position: fixed;
+    width:100%;
+    padding: 1em;
+    background-color: rgba(46, 15, 46, 0.247);
     justify-content: space-between;
     p{
         font-family: 'LuckiestGuy';
