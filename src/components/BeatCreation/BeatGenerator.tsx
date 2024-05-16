@@ -1,7 +1,8 @@
-import React, { useState, useRef, ChangeEvent, useEffect } from "react";
+import React, { useState, useRef, ChangeEvent, useEffect, useContext } from "react";
 import './BeatGenerator.scss'
 import { BeatFormsList } from "./BeatFormsList";
 import Mark from "../../interfaces/Mark";
+import { SongsContext } from "../../context/songs";
 
 export const BeatGenerator: React.FC = () => {
   const [audioSelected, setAudioSelected] = useState<string | null>(null);
@@ -14,6 +15,8 @@ export const BeatGenerator: React.FC = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const [selectedMark, setSelectedMark] = useState(0)
+
+  const { addSong }:any = useContext(SongsContext);
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -50,6 +53,25 @@ export const BeatGenerator: React.FC = () => {
         formVisible: false,
       }]);
     }
+  };
+
+  const saveSong = () => {
+    const songName = "Song";
+    const songArtist = "Artist";
+    const songDuration = audioRef.current?.duration || 0;
+    const songLevel = 1;
+    
+    const song = {
+      id: `${songName}_${songLevel}`,
+      audio: audioSelected,
+      name: songName,
+      artist: songArtist,
+      duration: songDuration,
+      level: songLevel,
+      beats: marks,
+    };
+
+    addSong(song);
   };
 
   useEffect(() => {
@@ -130,7 +152,7 @@ export const BeatGenerator: React.FC = () => {
             </>
           )}
         </div>
-        <button disabled={!audioSelected} onClick={() => console.log(marks)}>Generate</button>
+        <button disabled={!audioSelected} onClick={saveSong}>Generate</button>
       </section >
    
 

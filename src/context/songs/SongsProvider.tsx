@@ -29,7 +29,9 @@ export const SongsProvider = ({ children }:any) => {
 
         //add song
         const addSong = (song:any) => {
-            dispatch({ type: SONGS_TYPES.ADD_SONG, payload: song });
+            if (!state.songs.some((s: any) => s.id === song.id))
+                dispatch({ type: SONGS_TYPES.ADD_SONG, payload: song });
+            console.log(state)
         };
 
     return (
