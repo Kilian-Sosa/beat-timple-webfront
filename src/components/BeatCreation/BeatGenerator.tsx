@@ -16,7 +16,7 @@ export const BeatGenerator: React.FC = () => {
 
   const [selectedMark, setSelectedMark] = useState(0)
 
-  const { addSong }:any = useContext(SongsContext);
+  const { addSong, addLevel }:any = useContext(SongsContext);
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -59,20 +59,33 @@ export const BeatGenerator: React.FC = () => {
     const songName = "Song";
     const songArtist = "Artist";
     const songDuration = audioRef.current?.duration || 0;
-    const songLevel = 1;
     
     const song = {
-      id: `${songName}_${songLevel}`,
+      id: songName,
       audio: audioSelected,
       name: songName,
       artist: songArtist,
       duration: songDuration,
-      level: songLevel,
-      beats: marks,
+      levels: [
+      ]
     };
 
     addSong(song);
   };
+
+  const saveLevel = (level: number) => {
+    const songName = "Song";
+    saveSong();
+    
+    const levelData = {
+      id: `${songName}_${level}`,
+      level: level,
+      beats: marks,
+    };
+
+    addLevel(levelData, songName);
+    setMarks([]);
+  }
 
   useEffect(() => {
     const updateProgressWidth = () => {
@@ -152,6 +165,9 @@ export const BeatGenerator: React.FC = () => {
             </>
           )}
         </div>
+        <button disabled={!audioSelected} onClick={() => saveLevel(1)}>Add Level 1</button>
+        <button disabled={!audioSelected} onClick={() => saveLevel(2)}>Add Level 2</button>
+        <button disabled={!audioSelected} onClick={() => saveLevel(3)}>Add Level 3</button>
         <button disabled={!audioSelected} onClick={saveSong}>Generate</button>
       </section >
    

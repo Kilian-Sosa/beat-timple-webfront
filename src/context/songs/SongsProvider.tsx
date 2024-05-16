@@ -34,12 +34,23 @@ export const SongsProvider = ({ children }:any) => {
             console.log(state)
         };
 
+        //add song level
+        const addLevel = (level:any, songId: any) => {
+            const song = state.songs.find((s: any) => s.id === songId);
+            if (song.levels.some((l: any) => l.id === level.id)) return;
+            song.levels.push(level);
+            song.levels = song.levels.sort((a: any, b: any) => a.level - b.level); //Order by difficulty
+            
+            dispatch({ type: SONGS_TYPES.UPDATE_SONG, payload: song });
+        };
+
     return (
         <SongsContext.Provider 
         value={{
             ...state,
             getSongsList,
-            addSong
+            addSong,
+            addLevel
         }}
         
         >

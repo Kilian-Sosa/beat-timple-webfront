@@ -39,8 +39,8 @@ export const BeatFormsList = ({
               }}
             >
               {!mark.formVisible
-                ? `Mostrar ${mark.time}`
-                : "Ocultar" + mark.time}
+                ? `Show ${mark.time}`
+                : "Hide " + mark.time}
             </button>
             {mark.formVisible && (
               <>
