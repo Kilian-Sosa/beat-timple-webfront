@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { BeatGeneratorManual } from "../components/BeatCreation/BeatGeneratorManual/BeatGeneratorManual";
 import { BeatGeneratorAutomatic } from "../components/BeatCreation/BeatGeneratorAutomatic/BeatGeneratorAutomatic";
 import { BeatGeneratorRandom } from "../components/BeatCreation/BeatGeneratorRandom/BeatGeneratorRandom";
-import "../styles/beatCreation.scss";
+import "../styles/BeatCreation.scss";
 import { Info } from "../components/Shared/Icons/Info";
 import { BeatCreationModal } from "../components/BeatCreation/BeatCreationModal/BeatCreationModal";
 
@@ -42,20 +42,40 @@ export default function BeatCreation() {
       {!optionSelected.isAutomatic && !optionSelected.isRandom && (
         <div className="beat-creation-section manual">
           <div className="beat-creation-content">
-            <div className="gif-cont"></div>
+            {!optionSelected.isManual &&
+              !optionSelected.isRandom &&
+              !optionSelected.isAutomatic && <div className="gif-cont"></div>}
             <div className="button-cont">
-              <button
-                className="button"
-                onClick={() =>
-                  setOptionSelected({
-                    isAutomatic: false,
-                    isRandom: false,
-                    isManual: true,
-                  })
-                }
-              >
-                <span>MANUALLY</span>
-              </button>
+              {!optionSelected.isManual &&
+                !optionSelected.isRandom &&
+                !optionSelected.isAutomatic && (
+                  <button
+                    className="button"
+                    onClick={() =>
+                      setOptionSelected({
+                        isAutomatic: false,
+                        isRandom: false,
+                        isManual: true,
+                      })
+                    }
+                  >
+                    <span>MANUALLY</span>
+                  </button>
+                )}
+              {optionSelected.isManual && (
+                <button
+                  className="button"
+                  onClick={() =>
+                    setOptionSelected({
+                      isAutomatic: false,
+                      isRandom: false,
+                      isManual: false,
+                    })
+                  }
+                >
+                  <span>BACK</span>
+                </button>
+              )}
               <div
                 onClick={() =>
                   setInfoModalSelected({
@@ -89,18 +109,36 @@ export default function BeatCreation() {
         <div className="beat-creation-section automatic">
           <div className="beat-creation-content">
             <div className="button-cont">
-              <button
-                className="button"
-                onClick={() =>
-                  setOptionSelected({
-                    isAutomatic: true,
-                    isRandom: false,
-                    isManual: false,
-                  })
-                }
-              >
-                <span>AUTOMATICALLY</span>
-              </button>
+              {!optionSelected.isManual &&
+                !optionSelected.isRandom &&
+                !optionSelected.isAutomatic && (
+                  <button
+                    className="button"
+                    onClick={() =>
+                      setOptionSelected({
+                        isAutomatic: true,
+                        isRandom: false,
+                        isManual: false,
+                      })
+                    }
+                  >
+                    <span>AUTOMATICALLY</span>
+                  </button>
+                )}
+              {optionSelected.isAutomatic && (
+                <button
+                  className="button"
+                  onClick={() =>
+                    setOptionSelected({
+                      isAutomatic: false,
+                      isRandom: false,
+                      isManual: false,
+                    })
+                  }
+                >
+                  <span>BACK</span>
+                </button>
+              )}
               <div
                 onClick={() =>
                   setInfoModalSelected({
@@ -118,7 +156,9 @@ export default function BeatCreation() {
               </div>
             </div>
 
-            <div className="gif-cont"></div>
+            {!optionSelected.isManual &&
+              !optionSelected.isRandom &&
+              !optionSelected.isAutomatic && <div className="gif-cont"></div>}
             {infoModalSelected.isAutomatic && (
               <BeatCreationModal
                 optionSelected="automatic"
@@ -126,7 +166,6 @@ export default function BeatCreation() {
               />
             )}
           </div>
-
           {optionSelected.isAutomatic && <BeatGeneratorAutomatic />}
         </div>
       )}
@@ -134,21 +173,41 @@ export default function BeatCreation() {
       {!optionSelected.isAutomatic && !optionSelected.isManual && (
         <div className="beat-creation-section random">
           <div className="beat-creation-content">
-            <div className="gif-cont"></div>
+            {!optionSelected.isManual &&
+              !optionSelected.isRandom &&
+              !optionSelected.isAutomatic && <div className="gif-cont"></div>}
 
             <div className="button-cont">
-              <button
-                className="button"
-                onClick={() =>
-                  setOptionSelected({
-                    isAutomatic: false,
-                    isRandom: true,
-                    isManual: false,
-                  })
-                }
-              >
-                <span>RANDOMLY</span>
-              </button>
+              {!optionSelected.isManual &&
+                !optionSelected.isRandom &&
+                !optionSelected.isAutomatic && (
+                  <button
+                    className="button"
+                    onClick={() =>
+                      setOptionSelected({
+                        isAutomatic: false,
+                        isRandom: true,
+                        isManual: false,
+                      })
+                    }
+                  >
+                    <span>RANDOMLY</span>
+                  </button>
+                )}
+              {optionSelected.isRandom && (
+                <button
+                  className="button"
+                  onClick={() =>
+                    setOptionSelected({
+                      isAutomatic: false,
+                      isRandom: false,
+                      isManual: false,
+                    })
+                  }
+                >
+                  <span>BACK</span>
+                </button>
+              )}
               <div
                 onClick={() =>
                   setInfoModalSelected({

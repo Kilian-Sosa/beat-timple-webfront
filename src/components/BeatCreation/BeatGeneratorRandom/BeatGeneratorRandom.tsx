@@ -7,6 +7,8 @@ export const BeatGeneratorRandom = () => {
   const [audioSelected, setAudioSelected] = useState<string | null>(null);
   const [marks, setMarks] = useState<Mark[]>([]);
   const [levels, setLevels] = useState<{ level1: Mark[], level2: Mark[], level3: Mark[] } | null>(null);
+  const [selectedLevel, setSelectedLevel] = useState<'level1' | 'level2' | 'level3' | null>(null);
+
   const arrowIcon = "./assets/images/icons/arrow.svg";
   const noteIcon = "./assets/images/icons/note.svg";
 
@@ -87,7 +89,25 @@ export const BeatGeneratorRandom = () => {
   const selectLevel = (level: 'level1' | 'level2' | 'level3') => {
     if (levels) {
       setMarks(levels[level]);
+      setSelectedLevel(level);
     }
+  };
+
+  const downloadJSON = (data: any, filename: string) => {
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data, null, 2));
+    const downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href", dataStr);
+    downloadAnchorNode.setAttribute("download", filename);
+    document.body.appendChild(downloadAnchorNode);
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+  };
+
+  const handleDownload = (level: 'level1' | 'level2' | 'level3') => {
+    if (!levels) return;
+  
+    const filteredMarks = levels[level].map(({ id, formVisible, ...rest }) => rest);
+    downloadJSON(filteredMarks, `${level}.json`);
   };
 
   useEffect(() => {
@@ -135,7 +155,7 @@ export const BeatGeneratorRandom = () => {
             id="music"
             onChange={handleFileChange}
           />
-
+  
           <div className="marks-cont">
             <div
               className="progress"
@@ -156,7 +176,7 @@ export const BeatGeneratorRandom = () => {
             ))}
           </div>
         </section>
-
+  
         <section className="buttons-cont">
           <div>
             {audioSelected && (
@@ -172,7 +192,7 @@ export const BeatGeneratorRandom = () => {
               </>
             )}
           </div>
-
+  
           <button disabled={!audioSelected} onClick={generate}>
             Generate
           </button>
@@ -185,8 +205,14 @@ export const BeatGeneratorRandom = () => {
           <button disabled={!levels} onClick={() => selectLevel('level3')}>
             Show Level 3
           </button>
+  
+          {selectedLevel && (
+            <button onClick={() => handleDownload(selectedLevel)}>
+              Download {selectedLevel.replace('level', 'Level ')}
+            </button>
+          )}
         </section>
-
+  
         {marks && (
           <BeatFormsList
             defaultMarks={marks}
