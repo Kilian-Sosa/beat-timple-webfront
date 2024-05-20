@@ -1,0 +1,103 @@
+.about-cont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .about-content {
+        max-width: 1200px;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 6em 0 ;
+
+        h1 {
+            width: 100%;
+            font-weight: 500;
+            text-align: right;
+            margin-bottom: 4em;
+        }
+
+        .team-member{
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            position: relative;
+            margin-bottom: 4em;
+
+
+            .img-cont{
+                display: flex;
+                justify-content: start;
+                margin-right: 4em;
+            }
+
+            &.reverse{
+                .img-cont{
+                    margin-left: 4em;
+                    margin-right: 0;
+                };
+            }
+
+            .member-text{
+                display: flex;
+                flex-direction: column;
+            }
+
+            img{
+                width: 250px;
+            }
+        }
+       
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .about-cont {
+        .about-content {
+            padding: 4em 0 2em 0;
+
+            h1{
+                margin-bottom: 0;
+            }
+
+            .team-member {
+                flex-direction: column;
+                margin-bottom: 1em;
+              
+                &.reverse {
+                    flex-direction: column-reverse;
+                    
+                        .img-cont{
+                            margin-left: 0;
+                            margin-right: 0;
+                        };
+                    
+        
+                }
+
+                p,
+                .img-cont {
+                    width: 100%;
+                }
+
+                .img-cont {
+                    justify-content: flex-start;
+                    margin-top: 6em;
+
+                    img{
+                        margin-bottom: 4em;
+                    }
+
+                    &:nth-child(2){
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+

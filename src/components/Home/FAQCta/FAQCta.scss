@@ -1,0 +1,112 @@
+.faq-cta-cont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, #ec77ab 0%, #7873f5 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .faq-cta-content {
+        max-width: 1200px;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 6em 0;
+
+        h1 {
+            font-weight: 500;
+            color: #a03c8d;
+        }
+
+        .text-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            p,
+            .img-cont {
+                width: 50%;
+            }
+
+            .img-cont {
+                display: flex;
+                justify-content: flex-start;
+                position: relative;
+
+                button {
+                    background-image: url('assets/images/icons/button.svg');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-color: transparent;
+                    border: none;
+                    width: 250px;
+                    height: 80px;
+                    position: relative;
+                    bottom: 0;
+                    cursor: pointer;
+
+                    span {
+                        font-family: 'LuckiestGuy';
+                        font-size: 18px;
+                        position: relative;
+                        color: #a03c8d;
+
+                    }
+
+                    &:hover {
+                        background-image: url('assets/images/icons/buttonHover.svg');
+                        span{
+                            bottom: -0.3em;
+                        }
+                    }
+
+                    width: 210px;
+                    outline: none;
+                    background-position: bottom;
+                    bottom: -1em;
+                }
+            }
+
+            img {
+                width: 250px;
+
+                &.img-square {
+                    position: relative;
+                    left: -50px;
+                    z-index: -1;
+                    top: -50px;
+                }
+
+            }
+
+        }
+
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .faq-cta-cont {
+        .faq-cta-content {
+            padding: 4em 0 2em 0;
+
+            .text-container {
+                flex-direction: column;
+
+                p,
+                .img-cont {
+                    width: 100%;
+                }
+
+                .img-cont {
+                    justify-content: center;
+                    margin-top: 6em;
+                }
+            }
+        }
+    }
+
+}
+

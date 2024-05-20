@@ -3,7 +3,9 @@
     position: fixed;
     width:100%;
     padding: 1em;
+    z-index: 50;
     background-color: rgba(46, 15, 46, 0.247);
+    backdrop-filter: blur(5px);
     justify-content: space-between;
     p{
         font-family: 'LuckiestGuy';
@@ -14,5 +16,20 @@
 
     a{
         text-decoration: none;
+        p{
+
+            color: #fff;
+        }
+    }
+}
+
+.menu-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1em;
+    a{
+        margin-left: 1em;
+
     }
 }

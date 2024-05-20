@@ -1,0 +1,118 @@
+.beat-creation-section {
+
+
+    .beat-creation-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left:  2em;
+       
+
+        .button-cont{
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           width: 20%;
+
+            .icon-text {
+                // font-size: 20px;
+                margin-top: 25px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                width: fit-content;
+    
+                svg {
+                    width: 20px;
+                    margin-right: 0.5em;
+                    margin-top: 0.1em;
+                }
+    
+                &:hover {
+                    span {
+                        color: #fff;
+                    }
+    
+                    svg {
+                        fill: #fff;
+                    }
+    
+    
+                }
+            }
+        }
+
+        .gif-cont{
+            width: 90%;
+            max-width: 1200px;
+            height: 350px;
+           display: flex;
+            background-image: linear-gradient(to bottom, rgba(208, 48, 197, 0.073) 0%, rgba(22, 4, 44, 0.74) 100%), url('assets/images/gifs/gif1.gif');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+
+
+    &.manual {
+        background-color: #756d94;
+
+        .beat-creation-content{
+            padding-left:  0;
+            padding-right:  2em;
+        }
+    }
+
+    &.automatic {
+        background-color: #6f6691;
+
+
+       
+    }
+
+    &.random {
+        background-color: #665c8e;
+
+        .beat-creation-content{
+            padding-left:  0;
+            padding-right:  2em;
+        }
+    }
+
+    button {
+        background-image: url('assets/images/icons/buttonPurple.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 250px;
+        height: 80px;
+        background-color: transparent;
+        border: none;
+        position: relative;
+        bottom: 0;
+        cursor: pointer;
+
+        width: 210px;
+        outline: none;
+        background-position: bottom;
+        bottom: -1em;
+
+        span {
+            font-family: 'LuckiestGuy';
+            font-size: 18px;
+            position: relative;
+            color: #4c2a7b;
+
+        }
+
+        &:hover {
+            background-image: url('assets/images/icons/buttonPurpleHover.svg');
+
+            span {
+                bottom: -0.3em;
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,56 @@
+
+
+.faq-cont {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6em 0;
+
+    .faq-content{
+        max-width: 1200px;
+        width: 90%;
+  
+      
+   
+
+    .faq-question {
+        display: flex;
+        position: relative;
+        padding: 1em 1em 1em 0.5em;
+        border-bottom: 2px solid  #aea9c1;
+        cursor: pointer;
+
+      
+        svg {
+            position: absolute;
+            right: 0.5em;
+        }
+
+        &:hover {
+            svg {
+                fill: darken($color: #fff, $amount: 20%) !important;
+            }
+            h3 {
+                color: darken($color: #fff, $amount: 20%);
+            }
+        }
+
+        &.selected {
+            border-bottom: 2px solid  #fff;;
+
+            svg {
+                fill: #fff;
+            }
+            h3 {
+                color:  #fff;
+            }
+        }
+    }
+
+    .faq-answer {
+        padding: 0.5em;
+    }
+}
+}

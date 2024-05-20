@@ -1,0 +1,23 @@
+.beat-introduction-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .beat-introduction-content{
+    max-width: 1200px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 8em 0 4em 0 ;
+
+    h1, p{
+      text-align: center;
+      width: 100%;
+      margin-bottom: 0.5em;
+    }
+  }
+}
