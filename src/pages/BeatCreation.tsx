@@ -45,6 +45,7 @@ export default function BeatCreation() {
             <div className="gif-cont"></div>
             <div className="button-cont">
               <button
+                className="button"
                 onClick={() =>
                   setOptionSelected({
                     isAutomatic: false,
@@ -89,6 +90,7 @@ export default function BeatCreation() {
           <div className="beat-creation-content">
             <div className="button-cont">
               <button
+                className="button"
                 onClick={() =>
                   setOptionSelected({
                     isAutomatic: true,
@@ -136,6 +138,7 @@ export default function BeatCreation() {
 
             <div className="button-cont">
               <button
+                className="button"
                 onClick={() =>
                   setOptionSelected({
                     isAutomatic: false,

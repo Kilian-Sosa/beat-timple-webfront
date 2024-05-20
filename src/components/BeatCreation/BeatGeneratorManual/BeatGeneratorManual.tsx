@@ -81,7 +81,7 @@ export const BeatGeneratorManual = () => {
       <div className="beat-generator-cont">
         <div className="beat-generator-content">
           <div className="buttons-cont">
-              <button onClick={handleMarkButtonClick} disabled={!audioSelected || !isPlaying}>
+              <button className="mark-button" onClick={handleMarkButtonClick} disabled={!audioSelected || !isPlaying}>
                 Add Mark
               </button>
           </div>

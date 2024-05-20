@@ -11,10 +11,6 @@ export const Faqs = () => {
     }
 
     const faqsArray = faqs;
-    //console.log(faqsArray)
-    faqsArray.map(faq => {
-        console.log(faq.question)
-    })
 
     return (
         <>
