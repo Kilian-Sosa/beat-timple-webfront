@@ -45,58 +45,87 @@ export const BeatGeneratorRandom = () => {
     const duration = audioRef.current?.duration || 0;
     const count = Math.ceil(duration * beatDensity * duration);
     const marks: Mark[] = [];
+    const timeCounts: { [key: number]: { count: number; positions: string[] } } = {};
+  
     for (let i = 0; i < count; i++) {
+      let time = Math.random() * duration;
+      let tries = 0;
+  
+      while (timeCounts[time]?.count >= 2 && tries < 10) {
+        time = Math.random() * duration;
+        tries++;
+      }
+  
+      if (!timeCounts[time]) {
+        timeCounts[time] = { count: 0, positions: [] };
+      }
+      timeCounts[time].count++;
+  
+      const locationX = ["Left", "Right", "Middle"][Math.floor(Math.random() * 3)];
+      const locationY = ["Top", "Bottom"][Math.floor(Math.random() * 2)];
+  
+      timeCounts[time].positions.push(`${locationX}-${locationY}`);
+  
       marks.push({
         id: i,
-        time: Math.random() * duration,
-        locationX: ["Left", "Right", "Middle"][Math.floor(Math.random() * 3)],
-        locationY: ["Top", "Bottom"][Math.floor(Math.random() * 2)],
+        time,
+        locationX,
+        locationY,
         hit: ["Top", "Bottom", "Left", "Right"][Math.floor(Math.random() * 4)],
-        formVisible: false
+        formVisible: false,
       });
     }
+  
     return marks.sort((a, b) => a.time - b.time);
   };
   
   const addAdditionalMarks = (existingMarks: Mark[], percentage: number): Mark[] => {
     const count = Math.ceil(existingMarks.length * percentage);
     const additionalMarks: Mark[] = [];
-    const timeCounts: { [key: number]: number } = {};
+    const timeCounts: { [key: number]: { count: number; positions: string[] } } = {};
   
     existingMarks.forEach(mark => {
       if (!timeCounts[mark.time]) {
-        timeCounts[mark.time] = 0;
+        timeCounts[mark.time] = { count: 0, positions: [] };
       }
-      timeCounts[mark.time]++;
+      timeCounts[mark.time].count++;
+      timeCounts[mark.time].positions.push(`${mark.locationX}-${mark.locationY}`);
     });
   
     for (let i = 0; i < count; i++) {
       const randomMark = existingMarks[Math.floor(Math.random() * existingMarks.length)];
       let time = randomMark.time;
       let tries = 0;
+      let locationX = "";
+      let locationY = "";
   
-      while (timeCounts[time] >= 2 && tries < 10) {
-        time = existingMarks[Math.floor(Math.random() * existingMarks.length)].time;
+      do {
+        locationX = ["Left", "Right", "Middle"][Math.floor(Math.random() * 3)];
+        locationY = ["Top", "Bottom"][Math.floor(Math.random() * 2)];
         tries++;
-      }
+      } while (
+        timeCounts[time]?.positions.includes(`${locationX}-${locationY}`) &&
+        tries < 10
+      );
   
-      if (!timeCounts[time]) {
-        timeCounts[time] = 0;
-      }
-      timeCounts[time]++;
+      if (tries < 10) {
+        timeCounts[time].count++;
+        timeCounts[time].positions.push(`${locationX}-${locationY}`);
   
-      additionalMarks.push({
-        id: existingMarks.length + i,
-        time,
-        locationX: ["Left", "Right", "Middle"][Math.floor(Math.random() * 3)],
-        locationY: ["Top", "Bottom"][Math.floor(Math.random() * 2)],
-        hit: ["Top", "Bottom", "Left", "Right"][Math.floor(Math.random() * 4)],
-        formVisible: false,
-      });
+        additionalMarks.push({
+          id: existingMarks.length + i,
+          time,
+          locationX,
+          locationY,
+          hit: ["Top", "Bottom", "Left", "Right"][Math.floor(Math.random() * 4)],
+          formVisible: false,
+        });
+      }
     }
   
     return additionalMarks.sort((a, b) => a.time - b.time);
   };
+  
 
   const generate = () => {
     if (audioRef.current) {
@@ -108,7 +137,7 @@ export const BeatGeneratorRandom = () => {
       // Concatenate additional marks for each level
       const level1 = marksLevel1.concat(addAdditionalMarks(marksLevel1, 0.15));
       const level2 = marksLevel2.concat(addAdditionalMarks(marksLevel2, 0.35));
-      const level3 = marksLevel3.concat(addAdditionalMarks(marksLevel3, 0.7));
+      const level3 = marksLevel3.concat(addAdditionalMarks(marksLevel3, 0.5));
 
       setLevels({ level1, level2, level3 });
       selectLevel('level1');
