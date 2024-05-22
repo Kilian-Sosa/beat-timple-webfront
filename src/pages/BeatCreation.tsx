@@ -6,7 +6,7 @@ import { BeatGeneratorAutomatic } from "../components/BeatCreation/BeatGenerator
 import { BeatGeneratorRandom } from "../components/BeatCreation/BeatGeneratorRandom/BeatGeneratorRandom";
 import "../styles/BeatCreation.scss";
 import { Info } from "../components/Shared/Icons/Info";
-import { BeatCreationModal } from "../components/BeatCreation/BeatCreationModal/BeatCreationModal";
+import BeatCreationModal from "../components/BeatCreation/BeatCreationModal/BeatCreationModal";
 
 interface OptionSelected {
   isAutomatic: boolean;
