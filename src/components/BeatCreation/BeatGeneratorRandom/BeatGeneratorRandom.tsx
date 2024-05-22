@@ -41,8 +41,12 @@ export const BeatGeneratorRandom = () => {
     }
   };
 
-  const generateMarks = (count: number): Mark[] => {
+  const generateMarks = (beatDensity: number): Mark[] => {
     const duration = audioRef.current?.duration || 0;
+    console.log(duration)
+    console.log(duration * beatDensity)
+    const count = Math.ceil(duration * beatDensity * duration);
+    console.log(count)
     const marks: Mark[] = [];
     for (let i = 0; i < count; i++) {
       marks.push({
@@ -51,7 +55,7 @@ export const BeatGeneratorRandom = () => {
         locationX: ["Left", "Right", "Middle"][Math.floor(Math.random() * 3)],
         locationY: ["Top", "Bottom"][Math.floor(Math.random() * 2)],
         hit: ["Top", "Bottom", "Left", "Right"][Math.floor(Math.random() * 4)],
-        formVisible: false,
+        formVisible: false
       });
     }
     return marks.sort((a, b) => a.time - b.time);
@@ -75,9 +79,19 @@ export const BeatGeneratorRandom = () => {
 
   const generate = () => {
     if (audioRef.current) {
-      const level1 = generateMarks(85).concat(addAdditionalMarks(generateMarks(85), 15));
-      const level2 = generateMarks(150).concat(addAdditionalMarks(generateMarks(150), 50));
-      const level3 = generateMarks(200).concat(addAdditionalMarks(generateMarks(200), 100));
+      // Generate marks for each level
+      const marksLevel1 = generateMarks(0.003);
+      const marksLevel2 = generateMarks(0.004);
+      const marksLevel3 = generateMarks(0.005);
+      console.log(marksLevel1)
+
+      // Concatenate additional marks for each level
+      const level1 = marksLevel1.concat(addAdditionalMarks(marksLevel1, 15));
+      const level2 = marksLevel2.concat(addAdditionalMarks(marksLevel2, 50));
+      const level3 = marksLevel3.concat(addAdditionalMarks(marksLevel3, 100));
+      // const level1 = generateMarks(0.0015).concat(addAdditionalMarks(generateMarks(0.0015), 15));
+      // const level2 = generateMarks(0.002).concat(addAdditionalMarks(generateMarks(0.002), 50));
+      // const level3 = generateMarks(0.003).concat(addAdditionalMarks(generateMarks(0.003), 100));
 
       setLevels({ level1, level2, level3 });
       selectLevel('level1');
