@@ -104,22 +104,15 @@ export const BeatGeneratorRandom = () => {
       const marksLevel1 = generateMarks(0.007);
       const marksLevel2 = generateMarks(0.01);
       const marksLevel3 = generateMarks(0.015);
-      console.log(marksLevel1)
-      console.log(marksLevel2)
-      console.log(marksLevel3)
 
       // Concatenate additional marks for each level
       const level1 = marksLevel1.concat(addAdditionalMarks(marksLevel1, 0.15));
       const level2 = marksLevel2.concat(addAdditionalMarks(marksLevel2, 0.35));
       const level3 = marksLevel3.concat(addAdditionalMarks(marksLevel3, 0.7));
-      // const level1 = generateMarks(0.0015).concat(addAdditionalMarks(generateMarks(0.0015), 15));
-      // const level2 = generateMarks(0.002).concat(addAdditionalMarks(generateMarks(0.002), 50));
-      // const level3 = generateMarks(0.003).concat(addAdditionalMarks(generateMarks(0.003), 100));
 
       setLevels({ level1, level2, level3 });
       selectLevel('level1');
       setMarks(level1);
-      console.log({ level1, level2, level3 });
     }
   };
 

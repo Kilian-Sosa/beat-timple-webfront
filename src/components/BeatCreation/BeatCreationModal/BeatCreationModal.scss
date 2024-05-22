@@ -12,3 +12,38 @@
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
 }
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  
+    h1 {
+      flex: 1;
+      text-align: center;
+      margin: 0;
+    }
+  
+    .close {
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+    }
+  }
+  

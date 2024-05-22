@@ -113,7 +113,8 @@ export default function BeatCreation() {
                 !optionSelected.isRandom &&
                 !optionSelected.isAutomatic && (
                   <button
-                    className="button"
+                    disabled={true}
+                    className="button disabled"
                     onClick={() =>
                       setOptionSelected({
                         isAutomatic: true,

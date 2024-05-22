@@ -104,12 +104,23 @@
             color: #4c2a7b;
 
         }
-
+        
         &:hover {
             background-image: url('assets/images/icons/buttonPurpleHover.svg');
-
+            
             span {
                 bottom: -0.3em;
+            }
+        }
+        
+        &.disabled {
+            &:hover {
+                background-image: url('assets/images/icons/buttonPurple.svg') !important;
+                cursor: not-allowed;
+
+                span {
+                    bottom: 0;
+                }
             }
         }
 
