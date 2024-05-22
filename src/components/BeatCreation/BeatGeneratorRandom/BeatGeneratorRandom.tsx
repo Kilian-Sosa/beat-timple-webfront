@@ -123,6 +123,14 @@ export const BeatGeneratorRandom = () => {
     }
   };
 
+  const handleDownload = (level: 'level1' | 'level2' | 'level3') => {
+    if (!levels) return;
+  
+    const filteredMarks = levels[level].map(({ id, formVisible, ...rest }) => rest);
+    const data = { beatData: filteredMarks };
+    downloadJSON(data, `${level}.json`);
+  };
+  
   const downloadJSON = (data: any, filename: string) => {
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data, null, 2));
     const downloadAnchorNode = document.createElement('a');
@@ -131,13 +139,6 @@ export const BeatGeneratorRandom = () => {
     document.body.appendChild(downloadAnchorNode);
     downloadAnchorNode.click();
     downloadAnchorNode.remove();
-  };
-
-  const handleDownload = (level: 'level1' | 'level2' | 'level3') => {
-    if (!levels) return;
-  
-    const filteredMarks = levels[level].map(({ id, formVisible, ...rest }) => rest);
-    downloadJSON(filteredMarks, `${level}.json`);
   };
 
   useEffect(() => {
