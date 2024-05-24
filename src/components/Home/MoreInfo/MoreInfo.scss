@@ -25,7 +25,7 @@
 
         .text-container {
             display: flex;
-            flex-wrap: wrap;
+            width: 100%;
             justify-content: space-between;
             align-items: center;
 
@@ -87,9 +87,56 @@
 
             }
 
+            .right{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: flex-end;
+            }
+
         }
 
     }
+
+    .button-cont {
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+
+        button {
+            background-image: url('assets/images/icons/button.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-color: transparent;
+            border: none;
+            width: 250px;
+            height: 80px;
+            position: relative;
+            bottom: 0;
+            cursor: pointer;
+
+            span {
+                font-family: 'LuckiestGuy';
+                font-size: 18px;
+                position: relative;
+                color: #a03c8d;
+
+            }
+
+            &:hover {
+                background-image: url('assets/images/icons/buttonHover.svg');
+                span{
+                    bottom: -0.3em;
+                }
+            }
+
+            width: 210px;
+            outline: none;
+            background-position: bottom;
+            bottom: -1em;
+        }
+    }
+
 }
 
 @media screen and (max-width: 1000px) {

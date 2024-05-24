@@ -11,7 +11,7 @@ export const AppRouter = () => {
             <Menu />
             <Routes>
                 <Route index element={<Home />} />
-                <Route path="beat-creation" element={<BeatCreation />} />
+                <Route path="beat-generation" element={<BeatCreation />} />
                 <Route path="faqs" element={<Faqs />} />
                 <Route path="*" element={<Home />} />
             </Routes>

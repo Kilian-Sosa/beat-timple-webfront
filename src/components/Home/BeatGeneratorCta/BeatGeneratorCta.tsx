@@ -12,7 +12,7 @@ export const BeatGeneratorCta = () => {
           <p>Now you can choose to generate your song for the game manually, randomly or using our integrated AI with midi files</p>
             <div className="img-cont">
 
-              <NavLink to={'beat-creation'}>
+              <NavLink to={'beat-generation'}>
                 <button>
                   <span>DISCOVER MORE</span>
                 </button>

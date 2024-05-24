@@ -13,21 +13,30 @@ const BeatCreationModal: React.FC<BeatCreationModalProps> = ({ optionSelected, s
       case 'automatic':
         return (
           <>
-            <h2>COMING SOON</h2>
-            <p style={{marginBottom: "20px"}}>
-              This feature is currently under development. Stay tuned for future updates!
-            </p>
-            <h3>Explanation</h3>
-            <p>
-              This feature allows you to upload the midi file of a song and our AI
-              will generate the beatmap for you, saving you time and effort.
-              Unlike the random generation, our AI will analyze the song and predict
-              the best beatmap for it. After the generation, you will be able to customize the beatmap generated.
-            </p>
+            <div className="text-cont">
+              <h2>COMING SOON</h2>
+              <p style={{ marginBottom: "20px" }}>
+                This feature is currently under development. Stay tuned for future updates!
+              </p>
+              <h2>Explanation</h2>
+              <p>
+                This feature allows you to upload the midi file of a song and our AI
+                will generate the beatmap for you, saving you time and effort.
+                Unlike the random generation, our AI will analyze the song and predict
+                the best beatmap for it. After the generation, you will be able to customize the beatmap generated.
+              </p>
+            </div>
           </>
         );
       case 'random':
-        return <h2>Random content goes here...</h2>;
+        return (
+          <>
+            <div className="text-cont">
+              <h2>Random content goes here...</h2>
+            </div>
+          </>
+        )
+
       default:
         return null;
     }

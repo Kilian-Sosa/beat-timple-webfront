@@ -33,3 +33,14 @@
 
     }
 }
+
+.menu-left{
+    width: 40px;
+    .icon{
+        width: 100%;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}

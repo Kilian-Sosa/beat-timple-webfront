@@ -3,7 +3,7 @@ import './BeatGenerator.scss'
 import { BeatFormsList } from "./BeatFormsList";
 import Mark from "../../interfaces/Mark";
 import { SongsContext } from "../../context/songs";
-import { BeatCreationIntro } from "./BeatCreationIntro/BeatCreationIntro";
+// import { BeatCreationIntro } from "./BeatCreationIntro/BeatCreationIntro";
 
 export const BeatGenerator: React.FC = () => {
   const [audioSelected, setAudioSelected] = useState<string | null>(null);
@@ -17,13 +17,13 @@ export const BeatGenerator: React.FC = () => {
 
   const [selectedMark, setSelectedMark] = useState(0)
 
-  const { addSong, addLevel }: any = useContext(SongsContext);
+  const { addSong, addLevel }:any = useContext(SongsContext);
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
       const reader = new FileReader();
-      reader.onload = (e: any) => {
+      reader.onload = (e:any) => {
         setAudioSelected(e.target.result as string);
       };
       reader.readAsDataURL(file);

@@ -33,40 +33,59 @@
             font-family: RobotoBold;
         }
 
-        button{
-            background-image: url('assets/images/icons/button.svg');
-            background-repeat: no-repeat;
-            background-size: contain;
-            width: 250px;
-            height: 80px;
-            background-color: transparent;
-            border: none;
-            position: relative;
-            bottom: 0;
-            cursor: pointer;
-            margin-top: 2em;
-
-            span {
-                font-family: 'LuckiestGuy';
-                font-size: 18px;
+        .buttons-cont{
+            display: flex;
+            flex-direction: column;
+            button{
+                background-image: url('assets/images/icons/button.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 250px;
+                height: 80px;
+                background-color: transparent;
+                border: none;
                 position: relative;
-               
-                color: #7b2a7b;
-
-            }
-
-            &:hover {
-                background-image: url('assets/images/icons/buttonHover.svg');
-                span{
-                    bottom: -0.3em;
+                bottom: 0;
+                cursor: pointer;
+                margin-top: 2em;
+    
+              
+                span {
+                    font-family: 'LuckiestGuy';
+                    font-size: 18px;
+                    position: relative;
+                   
+                    color: #7b2a7b;
+    
                 }
+    
+                &:hover {
+                    background-image: url('assets/images/icons/buttonHover.svg');
+                    span{
+                        bottom: -0.3em;
+                    }
+                }
+    
+                &.purple{
+                    margin-top: 0;
+                    background-image: url('assets/images/icons/buttonPurple.svg');
+                    span{
+                        color: #4c2a7b;
+                    }
+                    &:hover {
+                        background-image: url('assets/images/icons/buttonPurpleHover.svg');
+                    }
+        
+                }
+    
+    
+                width: 210px;
+                outline: none;
+                background-position: bottom;
+               // bottom: -1em;
             }
-
-            width: 210px;
-            outline: none;
-            background-position: bottom;
-           // bottom: -1em;
         }
+
     }
 }
 

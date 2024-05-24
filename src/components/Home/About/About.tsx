@@ -8,6 +8,8 @@ export const About = () => {
     const Amos: string = './assets/images/icons/amos.svg'
     const Kilian: string = './assets/images/icons/kilian.svg'
     const Abi: string = './assets/images/icons/abi.svg'
+    const linkedin: string = './assets/images/icons/rrss/linkedin.svg'
+    const github: string = './assets/images/icons/rrss/github.svg'
 
     return (
         <>
@@ -22,24 +24,39 @@ export const About = () => {
                         </div>
                         <div className="member-text">
                             <h2>Pedro</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam blanditiis sapiente sed sequi nesciunt ipsum obcaecati minima temporibus hic. Laudantium totam officiis sapiente debitis earum explicabo delectus velit omnis deserunt?
-                                Minus similique amet repudiandae corporis culpa nam voluptatem atque ullam assumenda iste ad vel, placeat, provident exercitationem nulla architecto sequi, et nihil fugiat eum! Numquam debitis tempora sed ipsum sint?
-                                Nobis modi quae, vero ullam voluptatibus vitae corporis sint adipisci possimus deserunt fugiat praesentium numquam quibusdam repellat dolores, natus officia illo consequuntur iure sequi hic? Voluptatem ut adipisci exercitationem vel.</p>
+                            <p>I'm the clown of the team. I'm a developer who has studied both Java and C#
+                                I also like to shout out guturals <s>and totally not to make people's ears bleed.</s>
+                            </p>
+                            <div className="ssmm-cont">
+
+                                <a target='_blank' href="https://github.com/SrPeuva">
+                                    <img src={github} alt="github" />
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div className='team-member reverse'>
-
-                        <div className="member-text">
-                            <h2>Amos</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam blanditiis sapiente sed sequi nesciunt ipsum obcaecati minima temporibus hic. Laudantium totam officiis sapiente debitis earum explicabo delectus velit omnis deserunt?
-                                Minus similique amet repudiandae corporis culpa nam voluptatem atque ullam assumenda iste ad vel, placeat, provident exercitationem nulla architecto sequi, et nihil fugiat eum! Numquam debitis tempora sed ipsum sint?
-                                Nobis modi quae, vero ullam voluptatibus vitae corporis sint adipisci possimus deserunt fugiat praesentium numquam quibusdam repellat dolores, natus officia illo consequuntur iure sequi hic? Voluptatem ut adipisci exercitationem vel.</p>
-                        </div>
-                        <div className="img-cont">
+                    <div className='team-member '>
+                    <div className="img-cont">
                             <ScrollAnimation animateIn='fadeIn'>
                                 <img src={Amos} alt="" />
                             </ScrollAnimation>
                         </div>
+                        <div className="member-text">
+                            <h2>Amos</h2>
+                            <p>I'm a software developer that has knowledge in C#. I have a great quote that says "if you hit a brick wall just ask ChatGPT for help".
+                               
+                            </p>
+
+                            <div className="ssmm-cont">
+                                <a target='_blank' href="https://www.linkedin.com/in/amos-ingman-135693250">
+                                    <img src={linkedin} alt="linkedin" />
+                                </a>
+                                <a target='_blank' href="https://github.com/amos0000">
+                                    <img src={github} alt="github" />
+                                </a>
+                            </div>
+                        </div>
+                       
                     </div>
                     <div className='team-member'>
                         <div className="img-cont">
@@ -49,24 +66,36 @@ export const About = () => {
                         </div>
                         <div className="member-text">
                             <h2>Kilian</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam blanditiis sapiente sed sequi nesciunt ipsum obcaecati minima temporibus hic. Laudantium totam officiis sapiente debitis earum explicabo delectus velit omnis deserunt?
-                                Minus similique amet repudiandae corporis culpa nam voluptatem atque ullam assumenda iste ad vel, placeat, provident exercitationem nulla architecto sequi, et nihil fugiat eum! Numquam debitis tempora sed ipsum sint?
-                                Nobis modi quae, vero ullam voluptatibus vitae corporis sint adipisci possimus deserunt fugiat praesentium numquam quibusdam repellat dolores, natus officia illo consequuntur iure sequi hic? Voluptatem ut adipisci exercitationem vel.</p>
+                            <p>Full Stack Developer and Game Designer. Team Leader. The team's party pooper.</p>
+                            <div className="ssmm-cont">
+                                <a target='_blank' href="https://www.linkedin.com/in/kilian-sosa-guillén/?locale=en_US">
+                                    <img src={linkedin} alt="linkedin" />
+                                </a>
+                                <a target='_blank' href="https://github.com/Kilian-Sosa">
+                                    <img src={github} alt="github" />
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div className='team-member reverse'>
-
-                        <div className="member-text">
-                            <h2>Abi</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam blanditiis sapiente sed sequi nesciunt ipsum obcaecati minima temporibus hic. Laudantium totam officiis sapiente debitis earum explicabo delectus velit omnis deserunt?
-                                Minus similique amet repudiandae corporis culpa nam voluptatem atque ullam assumenda iste ad vel, placeat, provident exercitationem nulla architecto sequi, et nihil fugiat eum! Numquam debitis tempora sed ipsum sint?
-                                Nobis modi quae, vero ullam voluptatibus vitae corporis sint adipisci possimus deserunt fugiat praesentium numquam quibusdam repellat dolores, natus officia illo consequuntur iure sequi hic? Voluptatem ut adipisci exercitationem vel.</p>
-                        </div>
-                        <div className="img-cont">
+                    <div className='team-member '>
+                    <div className="img-cont">
                             <ScrollAnimation animateIn='fadeIn'>
                                 <img src={Abi} alt="" />
                             </ScrollAnimation>
                         </div>
+                        <div className="member-text">
+                            <h2>Abi</h2>
+                            <p>Software Developer with an artistic background. I discovered that developing video games allows me to merge my two passions: programming and art.</p>
+                            <div className="ssmm-cont">
+                                <a target='_blank' href="https://es.linkedin.com/in/abigail-ojeda">
+                                    <img src={linkedin} alt="linkedin" />
+                                </a>
+                                <a target='_blank' href="https://github.com/abigailojeda">
+                                    <img src={github} alt="github" />
+                                </a>
+                            </div>
+                        </div>
+                       
                     </div>
 
 

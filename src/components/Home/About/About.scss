@@ -5,51 +5,102 @@
 
     .about-content {
         max-width: 1200px;
-        width: 90%;
+        width: 100%;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: flex-start;
-        padding: 6em 0 ;
+        padding: 6em 0;
 
         h1 {
             width: 100%;
             font-weight: 500;
-            text-align: right;
+            text-align: center;
             margin-bottom: 4em;
         }
 
-        .team-member{
-            width: 100%;
+        .team-member {
+            width: 50%;
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
+            align-items: flex-end;
             position: relative;
             margin-bottom: 4em;
+            // margin-right: 2em;
 
 
-            .img-cont{
+            .img-cont {
                 display: flex;
                 justify-content: start;
-                margin-right: 4em;
+                margin-right: 1em;
             }
 
-            &.reverse{
-                .img-cont{
-                    margin-left: 4em;
-                    margin-right: 0;
-                };
-            }
-
-            .member-text{
+            .member-text {
                 display: flex;
                 flex-direction: column;
+                justify-content: flex-end;
+                height: 200px;
+                max-width: 300px;
+
+
+                h2 {
+                    margin-bottom: 1em;
+                }
+
+                .ssmm-cont {
+                    display: flex;
+                    margin-top: 1em;
+
+                    a {
+                        img {
+                            width: 30px;
+                            margin-right: 0.5em;
+                        }
+
+                        &:hover{
+                            img{
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+
+                }
+
             }
 
-            img{
-                width: 250px;
+            img {
+                width: 150px;
             }
+
+            &.reverse {
+                .img-cont {
+                    margin-left: 4em;
+                    margin-right: 0;
+                }
+
+                .member-text {
+                    text-align: right;
+                }
+
+                .ssmm-cont {
+                    display: flex;
+                    margin-bottom: 1em;
+                    justify-content: flex-end;
+
+                    a {
+                        img {
+                            margin-left: 0.5em;
+                            margin-right: 0;
+                        }
+                    }
+
+                }
+            }
+
+
         }
-       
+
     }
 }
 
@@ -57,47 +108,41 @@
     .about-cont {
         .about-content {
             padding: 4em 0 2em 0;
+            flex-direction: column;
+            align-items: center;
 
-            h1{
-                margin-bottom: 0;
+            .team-member {
+                width: 100%;
+                padding: 0 2em;
+
+                .member-text {
+                    max-width: 600px;
+                    height: auto;
+                }
+
+                h1 {
+                    margin-bottom: 1em;
+                }
             }
+
+        }
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .about-cont {
+        .about-content {
+            padding: 4em 0 2em 0;
+            flex-direction: column;
+            align-items: center;
 
             .team-member {
                 flex-direction: column;
-                margin-bottom: 1em;
-              
-                &.reverse {
-                    flex-direction: column-reverse;
-                    
-                        .img-cont{
-                            margin-left: 0;
-                            margin-right: 0;
-                        };
-                    
-        
-                }
-
-                p,
-                .img-cont {
-                    width: 100%;
-                }
-
-                .img-cont {
-                    justify-content: flex-start;
-                    margin-top: 6em;
-
-                    img{
-                        margin-bottom: 4em;
-                    }
-
-                    &:nth-child(2){
-                        justify-content: flex-end;
-                    }
-                }
             }
+
+
         }
     }
-    
+
 }
-
-

@@ -1,7 +1,7 @@
-import "animate.css/animate.compat.css"
+
+import { NavLink } from 'react-router-dom'
 import './MoreInfo.scss'
-//@ts-ignore
-import ScrollAnimation from 'react-animate-on-scroll';
+
 export const MoreInfo = () => {
 
     const flyHead: string = './assets/images/icons/flyHead.svg'
@@ -13,7 +13,7 @@ export const MoreInfo = () => {
         <>
             <div className="info-cont">
                 <div className="info-content">
-                    <h1>DISCOVER A NEW MUSIC GAME</h1>
+                    <h1>HAVE YOU ANY QUESTION?</h1>
 
                     <div className='text-container'>
                         <div className="img-cont">
@@ -29,7 +29,19 @@ export const MoreInfo = () => {
                             </div>
 
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro reiciendis doloribus dicta molestiae aspernatur iusto, incidunt veniam odit beatae? Ex repellat quae ipsam sed eius nesciunt quo repellendus nostrum eaque?</p>
+                        <div className="right">
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro reiciendis doloribus dicta molestiae aspernatur iusto, incidunt veniam odit beatae? Ex repellat quae ipsam sed eius nesciunt quo repellendus nostrum eaque?</p>
+                            <div className="button-cont">
+                                <NavLink to={'faqs'}>
+                                    <button>
+                                        <span>FAQs</span>
+                                    </button>
+                                </NavLink>
+
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
