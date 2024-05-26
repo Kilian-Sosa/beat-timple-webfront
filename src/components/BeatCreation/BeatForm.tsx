@@ -50,13 +50,13 @@ export const BeatForm: React.FC<any> = ({
         checked={formValues.locationX === "Left"}
         onChange={handleInputChange}
       />
-      <label htmlFor="CenterLocX">Center</label>
+      <label htmlFor="CenterLocX">Middle</label>
       <input
         type="radio"
         id="CenterLocX"
         name="locationX"
         value="Center"
-        checked={formValues.locationX === "Center"}
+        checked={formValues.locationX === "Middle"}
         onChange={handleInputChange}
       />
       <label htmlFor="RightLocX">Right</label>
