@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { BeatGeneratorManual } from "../components/BeatCreation/BeatGeneratorManual/BeatGeneratorManual";
 import { BeatGeneratorAutomatic } from "../components/BeatCreation/BeatGeneratorAutomatic/BeatGeneratorAutomatic";
 import { BeatGeneratorRandom } from "../components/BeatCreation/BeatGeneratorRandom/BeatGeneratorRandom";
-import "../styles/BeatCreation.scss";
+import "../styles/beatCreation.scss";
 import { Info } from "../components/Shared/Icons/Info";
 import BeatCreationModal from "../components/BeatCreation/BeatCreationModal/BeatCreationModal";
 

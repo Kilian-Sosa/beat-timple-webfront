@@ -133,7 +133,6 @@ export const BeatForm: React.FC<any> = ({
   
   </div>
   </section>
-      <button onClick={reset}>×</button>
     </>
   );
 };

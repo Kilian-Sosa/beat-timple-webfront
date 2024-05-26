@@ -15,7 +15,7 @@ export const Menu = () => {
                 <p>FAQs</p>
             </NavLink>
             <NavLink to="beat-generation">
-                <p>Beat Gemeration</p>
+                <p>Beat Generation</p>
             </NavLink>
 
         </div>
