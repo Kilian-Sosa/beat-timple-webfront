@@ -258,6 +258,7 @@ export const BeatGeneratorManual = () => {
           <button className="mark-button"
             onClick={() => {
               audioRef.current!.currentTime = 0;
+              audioRef.current!.play();
               setIsPlaying(true);
             }}
           >
