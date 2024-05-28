@@ -1,18 +1,54 @@
 .beat-generator-cont {
 
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100vh;
-    padding: 0 1em;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    .modal-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      
+      
+        h1 {
+          flex: 1;
+          text-align: left;
+          padding-left: 20px;
+          margin: 0;
+        }
+      
+        .close {
+          position: absolute;
+          right: 20px;
+          top: 10px;
+          font-size: 35px;
+          cursor: pointer;
+      
+          &:hover{
+            transform: scale(1.15);
+          }
+        }
+      }
 
     .beat-generator-content{
-        height: 100%;
-        max-width: 900px;
-        width: 80%;
-     
+        // height: 100%;
+        max-width: 1400px;
+        width: 90%;
+        background-color: #fefefe;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+        border-radius: 12px;
+        padding: 2em;
 
         .marks-cont {
             position: relative;
@@ -20,9 +56,9 @@
             background-color: #ccc;
             border-radius: 99px;
             margin-top: 10px;
-            filter: drop-shadow(0px 0px 10px rgba(148, 18, 146, 0.4));            
-    
-    
+            filter: drop-shadow(0px 0px 10px rgba(148, 18, 146, 0.4));
+
+
             .progress {
                 border-radius: 99px;
                 position: absolute;
@@ -31,30 +67,30 @@
                 height: 100%;
                 background-color: #7a73f4;
             }
-    
+
             .mark {
                 position: absolute;
                 top: 0;
                 background-color: #fff;
                 width: 2px;
                 height: 100%;
-    
+
                 &.selected {
                     background-color: red;
                 }
             }
         }
-    
+
         .buttons-cont {
             display: flex;
-    
-          
+
+
         }
-    
+
         .music-input{
             display: none;
         }
-    
+
         .input-song{
             display: grid;
             grid-template-columns: 60px auto;
@@ -63,17 +99,17 @@
                 position: relative;
                 width: 50px;
                 cursor: pointer;
-                filter: drop-shadow(3px 5px 2px rgba(148, 18, 146, 0.8));            
-    
-        
+                filter: drop-shadow(3px 5px 2px rgba(148, 18, 146, 0.8));
+
+
                 &:hover{
                     transform: scale(1.1);
                 }
                 &.dancing:hover{
                     transform: none;
                 }
-                
-                
+
+
                 .arrow{
                     width: 20px;
                     position: absolute;
@@ -81,10 +117,10 @@
                     left: 0.2em;
                     z-index: -1;
                     animation: moveTop 0.5s infinite alternate;
-                    
+
                 }
-    
-    
+
+
                 &.dancing{
                     cursor: default;
                     .note{
@@ -92,10 +128,10 @@
                         animation-delay: 1s;
                     }
                 }
-    
+
             }
-    
-           
+
+
         }
     }
 
@@ -120,7 +156,7 @@
     100% {
         transform: translateY(-100%);
     }
-    
+
 }
 @keyframes dancing {
     0% {

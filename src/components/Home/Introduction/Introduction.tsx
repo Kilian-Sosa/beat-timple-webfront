@@ -13,7 +13,11 @@ export const Introduction = () => {
           <h1>DISCOVER A NEW MUSIC GAME</h1>
 
           <div className='text-container'>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro reiciendis doloribus dicta molestiae aspernatur iusto, incidunt veniam odit beatae? Ex repellat quae ipsam sed eius nesciunt quo repellendus nostrum eaque?</p>
+            <div className='text'>
+              <p>Dive into a unique virtual reality experience with Fleje Beats! This game combines a Kawaii aesthetic with neon colors, offering a visually charming and fun experience where you master the rhythm and slice through boxes with precision.</p>
+            
+           
+            </div>
             <div className="img-cont">
               <ScrollAnimation animateIn='slideInDown'>
                 <img src={boxCircle} alt="" />

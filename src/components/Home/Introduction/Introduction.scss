@@ -18,9 +18,19 @@
 
         .text-container {
             display: flex;
-            flex-wrap: wrap;
+
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
+
+            .text {
+                margin-top: 2em;
+
+                p {
+                    font-size: 1.2em;
+                    line-height: 1.5em;
+
+                }
+            }
 
             p,
             .img-cont {
@@ -35,6 +45,9 @@
 
             img {
                 width: 250px;
+                &::selection{
+                    background-color: transparent;
+                }
 
                 &.img-square {
                     position: relative;
@@ -57,10 +70,12 @@
 
             .text-container {
                 flex-direction: column;
+                justify-content: center;
+                align-items: center;
 
                 p,
                 .img-cont {
-                    width: 100%;
+                    width: 80%;
                 }
 
                 .img-cont {
@@ -70,13 +85,29 @@
             }
         }
     }
-    
+
+}
+
+
+@media screen and (max-width: 800px) {
+    .introduction-cont {
+        .introduction-content {
+            .text-container {
+                img {
+                    width: 150px;
+                }
+            }
+        }
+    }
+
+
 }
 
 @keyframes appear {
     0% {
         transform: posY(100px);
     }
+
     100% {
         transform: posY(0);
     }

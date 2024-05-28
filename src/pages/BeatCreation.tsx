@@ -1,18 +1,18 @@
 import { BeatCreationIntro } from "../components/BeatCreation/BeatCreationIntro/BeatCreationIntro";
-import { BeatGenerator } from "../components/BeatCreation/BeatGenerator";
+// import { BeatGenerator } from "../components/BeatCreation/BeatGenerator";
 import { useEffect, useState } from "react";
 import { BeatGeneratorManual } from "../components/BeatCreation/BeatGeneratorManual/BeatGeneratorManual";
 import { BeatGeneratorAutomatic } from "../components/BeatCreation/BeatGeneratorAutomatic/BeatGeneratorAutomatic";
 import { BeatGeneratorRandom } from "../components/BeatCreation/BeatGeneratorRandom/BeatGeneratorRandom";
-import "../styles/beatCreation.scss";
+import "../styles/BeatCreation.scss";
 import { Info } from "../components/Shared/Icons/Info";
 import BeatCreationModal from "../components/BeatCreation/BeatCreationModal/BeatCreationModal";
 
-interface OptionSelected {
-  isAutomatic: boolean;
-  isRandom: boolean;
-  isManual: boolean;
-}
+// interface OptionSelected {
+//   isAutomatic: boolean;
+//   isRandom: boolean;
+//   isManual: boolean;
+// }
 
 export default function BeatCreation() {
   const [optionSelected, setOptionSelected] = useState({
@@ -38,8 +38,69 @@ export default function BeatCreation() {
   return (
     <div id="generator">
       <BeatCreationIntro />
+      
+      <div className="beat-creation-section manual">
+        <div className="beat-creation-content">
+          <div className="gif-cont"></div>
+          <div className="button-cont">
 
-      {!optionSelected.isAutomatic && !optionSelected.isRandom && (
+            <button
+              className="button"
+              onClick={() =>
+                setOptionSelected({
+                  isAutomatic: false,
+                  isRandom: false,
+                  isManual: true,
+                })
+              }
+            >
+              <span>MANUALLY</span>
+            </button>
+
+
+            <button
+              className="button"
+              onClick={() =>
+                setOptionSelected({
+                  isAutomatic: false,
+                  isRandom: false,
+                  isManual: false,
+                })
+              }
+            >
+              <span>BACK</span>
+            </button>
+
+            <div
+              onClick={() =>
+                setInfoModalSelected({
+                  isAutomatic: false,
+                  isRandom: false,
+                  isManual: true,
+                })
+              }
+              className="icon-text"
+            >
+              <span>
+                <Info color={infoColor} />
+              </span>
+              <span>More info here</span>
+            </div>
+          </div>
+
+          {infoModalSelected.isManual && (
+            <BeatCreationModal
+              optionSelected="manual"
+              setInfoModalSelected={setInfoModalSelected}
+            />
+          )}
+        </div>
+
+        {optionSelected.isManual
+          &&
+          <BeatGeneratorManual setOptionSelected={setOptionSelected} />}
+      </div>
+      {/* {!optionSelected.isAutomatic && !optionSelected.isRandom && (
         <div className="beat-creation-section manual">
           <div className="beat-creation-content">
             {!optionSelected.isManual &&
@@ -103,9 +164,9 @@ export default function BeatCreation() {
 
           {optionSelected.isManual && <BeatGeneratorManual />}
         </div>
-      )}
+      )} */}
 
-      {!optionSelected.isManual && !optionSelected.isRandom && (
+      {/* {!optionSelected.isManual && !optionSelected.isRandom && (
         <div className="beat-creation-section automatic">
           <div className="beat-creation-content">
             <div className="button-cont">
@@ -169,9 +230,9 @@ export default function BeatCreation() {
           </div>
           {optionSelected.isAutomatic && <BeatGeneratorAutomatic />}
         </div>
-      )}
+      )} */}
 
-      {!optionSelected.isAutomatic && !optionSelected.isManual && (
+      {/* {!optionSelected.isAutomatic && !optionSelected.isManual && (
         <div className="beat-creation-section random">
           <div className="beat-creation-content">
             {!optionSelected.isManual &&
@@ -235,9 +296,9 @@ export default function BeatCreation() {
           </div>
 
           {optionSelected.isRandom && <BeatGeneratorRandom />}
-          {/* <BeatGenerator/> */}
+          {/* <BeatGenerator/> 
         </div>
-      )}
+      )} */}
     </div>
   );
 }

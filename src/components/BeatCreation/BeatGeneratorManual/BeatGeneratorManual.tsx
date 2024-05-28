@@ -3,7 +3,7 @@ import Mark from "../../../interfaces/Mark";
 import { BeatFormsList } from "../BeatFormsList";
 import "./BeatGeneratorManual.scss";
 
-export const BeatGeneratorManual = () => {
+export const BeatGeneratorManual = ({setOptionSelected}:any) => {
   const [audioSelected, setAudioSelected] = useState<string | null>(null);
   const [marks, setMarks] = useState<Mark[]>([]);
   const [levels, setLevels] = useState<{ level1: Mark[], level2: Mark[], level3: Mark[] } | null>(null);
@@ -234,6 +234,15 @@ export const BeatGeneratorManual = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+  // const handleCloseModal = () => {
+  //   console.log('aquiii');
+  //   setInfoModalSelected({
+  //     isAutomatic: false,
+  //     isRandom: false,
+  //     isManual: false
+  //   });
+  // }
+
   useEffect(() => {
     const handleAudioEnded = () => {
       console.log(marks);
@@ -250,7 +259,21 @@ export const BeatGeneratorManual = () => {
 
   return (
     <div className="beat-generator-cont">
+
       <div className="beat-generator-content">
+        <div className="modal-header">
+          <h1>BEAT GENERATOR</h1>
+          <span
+            onClick={ ()=> setOptionSelected({
+                  isAutomatic: false,
+                  isRandom: false,
+                  isManual: false
+                })}
+            className="close"
+          >
+            &times;
+          </span>
+        </div>
         <div className="buttons-cont">
           <button className="mark-button" onClick={handleMarkButtonClick} disabled={!audioSelected || !isPlaying}>
             Add Mark
