@@ -112,7 +112,7 @@
         position: relative;
 
         button {
-            background-image: url('assets/images/icons/button.svg');
+            background-image: url('images/icons/button.svg');
             background-repeat: no-repeat;
             background-size: contain;
             background-color: transparent;
@@ -132,7 +132,7 @@
             }
 
             &:hover {
-                background-image: url('assets/images/icons/buttonHover.svg');
+                background-image: url('images/icons/buttonHover.svg');
 
                 span {
                     bottom: -0.3em;

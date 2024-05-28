@@ -35,7 +35,7 @@
                 height: 100%;
 
                 button {
-                    background-image: url('assets/images/icons/buttonPurple.svg');
+                    background-image: url('images/icons/buttonPurple.svg');
                     background-repeat: no-repeat;
                     background-size: contain;
                     width: 250px;
@@ -55,7 +55,7 @@
                     }
 
                     &:hover {
-                        background-image: url('assets/images/icons/buttonPurpleHover.svg');
+                        background-image: url('images/icons/buttonPurpleHover.svg');
                         span{
                             bottom: -0.3em;
                         }
