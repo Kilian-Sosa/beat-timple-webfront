@@ -1,11 +1,14 @@
 // import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Header.scss';
 import YouTube, { YouTubeProps } from 'react-youtube';
 const logo: string = './assets/images/icons/logoNeonPink.svg'
 
 export const Header = () => {
-
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
   const [showVideo, setShowVideo] = useState(false)
 
   const onPlayerReady: YouTubeProps['onReady'] = (event) => {
@@ -14,13 +17,25 @@ export const Header = () => {
   }
 
   const opts: YouTubeProps['opts'] = {
-    height: '390',
-    width: '640',
+    height: windowSize.height <= 600 ? '200' : '390',
+    width: windowSize.width <= 600 ? '300' : '640',
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
     },
   };
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div className='header-cont'>
