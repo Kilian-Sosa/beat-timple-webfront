@@ -37,7 +37,6 @@ export const BeatForm: React.FC<any> = ({ mark, setMarks, marks }) => {
           onChange={handleInputChange}
         />
       </div>
-      <hr />
       <div className="form-row">
         <span>Side of the Platform</span>
         <div className="form-options">
@@ -70,7 +69,6 @@ export const BeatForm: React.FC<any> = ({ mark, setMarks, marks }) => {
           />
         </div>
       </div>
-      <hr />
       <div className="form-row">
         <span>Vertical Position</span>
         <div className="form-options">
@@ -94,7 +92,6 @@ export const BeatForm: React.FC<any> = ({ mark, setMarks, marks }) => {
           />
         </div>
       </div>
-      <hr />
       <div className="form-row">
         <span>Hit Side</span>
         <div className="form-options">
@@ -136,7 +133,6 @@ export const BeatForm: React.FC<any> = ({ mark, setMarks, marks }) => {
           />
         </div>
       </div>
-      <hr />
     </section>
   );
 };
