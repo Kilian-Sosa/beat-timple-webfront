@@ -2,38 +2,61 @@ export const faqs = [
    {
       "id": 0,
       "question": "What is Fleje Beats?",
-      "answer": "Fleje Beats is a VR rythm gameuego de Realidad Virtual en el que se pretende retar al jugador con distintos desafíos en un mundo más parecido a un sueño que a la realidad. El objetivo final del juego es poder salir de ese sueño, pero para ello tendrá que supera cada una de las tres pruebas"
+      "answer": "Fleje Beats is a VR rhythm game that blends neon aesthetics with kawaii visuals, creating an immersive experience where players can groove to the beat and challenge their rhythm skills."
    },
    {
       "id": 1,
-      "question": "¿Qué es un juego educativo?",
-      "answer": "Un juego educativo tiene la intención de juntar lo mejor de dos mundos: Aprender mientras se juega. De esa forma los conocimientos llegan a los jugadores de forma amigable y divertida"
+      "question": "How much does it cost?",
+      "answer": "Fleje Beats is free to play."
    },
-
    {
       "id": 2,
-      "question": "¿Cuándo estará disponible la beta abierta?",
-      "answer": "El desarrollo total del producto llevaría al menos dos años, si seguimos siendo el mismo número de personas con los mismos recursos materiales y temporales."
+      "question": "When will the open beta be available?",
+      "answer": "The open beta will be available for everyone on the 28th of May 2024."
    },
    {
       "id": 3,
-      "question": "¿Cuánto constará?",
-      "answer": "Todavía estamos considerando si será una compra única o una subscripción mensual. En todo caso, la subscripción mensual sería una doceava parte del precio del pago único. Y el pago único nunca sería mayor de 0€. O sea, que será gratis. "
+      "question": "What do I need to play Fleje Beats?",
+      "answer": "You only need a VR headset and a computer. We recommend a VR headset like Quest 2 or similar."
    },
    {
       "id": 4,
-      "question": "¿Estará disponible desde Steam?",
-      "answer": "Por ahora no sabemos en qué plataformas podremos subirlo. Lo más seguro es que las primeras versiones sólo se puedan descargar desde Github. Si en un futuro vemos que esto tiene oportunidades, intentaremos subirlo a tantas plataformas como podamos."
+      "question": "Can I play with my hands?",
+      "answer": "Yes! Unlike many other VR games, Fleje Beats is designed to be played with both hands or controllers."
    },
    {
       "id": 5,
-      "question": "¿Qué necesito para poder jugar?",
-      "answer": "Actualmente sólo es compatible con los Oculus Quest. Estamos estudiando incluir compatibilidad con otros dispositivos."
+      "question": "Is it played standing or sitting?",
+      "answer": "In Fleje Beats, you can do both! As long as you have enough space to move your arms, you can play standing or sitting."
    },
    {
       "id": 6,
-      "question": "¿Se juega de pie o sentado?",
-      "answer": "Puedes desplazarte desde el mundo con teletransporte o moviéndote. Así que si quieres estar de pie, puedes, y si quieres estar sentado, también. Para un mejor experiencia recomendamos jugarlo sentado."
+      "question": "Will it be available on Steam or Meta Store?",
+      "answer": "At the moment, it will only be available on Itch.io. After the open beta, we plan to publish it on Steam and later on Meta Store."
+   },
+   {
+      "id": 7,
+      "question": "Can I play with friends?",
+      "answer": "Fleje Beats is a single-player game, but you can share your levels with friends and challenge them to beat your high score with our ranking feature!"
+   },
+   {
+      "id": 8,
+      "question": "Does it have multiplayer mode?",
+      "answer": "Multiplayer mode is something we plan to implement when the game is fully released. For the open beta, we are focusing on the single-player experience."
+   },
+   {
+      "id": 9,
+      "question": "Can I play without VR?",
+      "answer": "Not at the moment. Fleje Beats is designed to be played with a VR headset, but we are considering making a version for non-VR players in the future."
+   },
+   {
+      "id": 10,
+      "question": "Can I play my own music?",
+      "answer": "Yes! That's the whole point! In Fleje Beats, you can upload any song you like and customize the different levels to play with your favorite music."
+   },
+   {
+      "id": 11,
+      "question": "How do I upload my music?",
+      "answer": "That's easy! Just go to 'Beat Creation', upload the song you want to play, and start creating your own levels."
    }
-
 ]
