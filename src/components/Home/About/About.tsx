@@ -8,6 +8,7 @@ export const About = () => {
     const Amos: string = './assets/images/icons/amos.svg'
     const Kilian: string = './assets/images/icons/kilian.svg'
     const Abi: string = './assets/images/icons/abi.svg'
+    const Isaac: string = './assets/images/icons/isaac.svg'
     const linkedin: string = './assets/images/icons/rrss/linkedin.svg'
     const github: string = './assets/images/icons/rrss/github.svg'
 
@@ -86,6 +87,26 @@ export const About = () => {
                         <div className="member-text">
                             <h2>Abi</h2>
                             <p>Software Developer with an artistic background. I discovered that developing video games allows me to merge my two passions: programming and art.</p>
+                            <div className="ssmm-cont">
+                                <a target='_blank' href="https://es.linkedin.com/in/abigail-ojeda">
+                                    <img src={linkedin} alt="linkedin" />
+                                </a>
+                                <a target='_blank' href="https://github.com/abigailojeda">
+                                    <img src={github} alt="github" />
+                                </a>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div className='team-member '>
+                    <div className="img-cont">
+                            <ScrollAnimation animateIn='fadeIn'>
+                                <img src={Isaac} alt="" />
+                            </ScrollAnimation>
+                        </div>
+                        <div className="member-text">
+                            <h2>Isaac</h2>
+                            <p>Studies composition at the Conservatorio Superior de Música de Canarias in Gran Canaria. He has composed music for both short films and video games using different musical styles.</p>
                             <div className="ssmm-cont">
                                 <a target='_blank' href="https://es.linkedin.com/in/abigail-ojeda">
                                     <img src={linkedin} alt="linkedin" />

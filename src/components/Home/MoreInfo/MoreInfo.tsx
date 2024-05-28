@@ -31,7 +31,7 @@ export const MoreInfo = () => {
                         </div>
                         <div className="right">
 
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro reiciendis doloribus dicta molestiae aspernatur iusto, incidunt veniam odit beatae? Ex repellat quae ipsam sed eius nesciunt quo repellendus nostrum eaque?</p>
+                            <p>This is a game that may surprise you, fun and pleasing to the eye, do you want to discover more?</p>
                             <div className="button-cont">
                                 <NavLink to={'faqs'}>
                                     <button>

@@ -172,6 +172,63 @@
 }
 
 
+@media screen and (max-width: 800px) {
+    .info-cont {
+        .info-content {
+            .text-container {
+
+                p {
+                    font-size: 1em;
+                }
+             
+            .img-cont {
+                
+
+                .head {
+                 
+                    margin-left: 25px;
+                
+
+
+                    .left-wing {
+                        left: -40px;
+
+                        img {
+
+                            width: 75px;
+                        }
+                    }
+
+                    .right-wing {
+                        right: -40px;
+
+                        img {
+
+                            width: 75px;
+                        }
+
+                    }
+                }
+           
+            }
+
+            img {
+                width: 125px;
+
+                &.img-square {
+                    position: relative;
+                    left: -50px;
+                    z-index: -1;
+                    top: -50px;
+                }
+
+            }
+        }
+        }
+    }
+
+
+}
 
 @keyframes moveTop {
     0% {

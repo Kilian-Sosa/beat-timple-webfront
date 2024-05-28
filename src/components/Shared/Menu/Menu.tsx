@@ -14,9 +14,9 @@ export const Menu = () => {
             <NavLink to="faqs">
                 <p>FAQs</p>
             </NavLink>
-            <NavLink to="beat-generation">
+            {/* <NavLink to="beat-generation">
                 <p>Beat Generation</p>
-            </NavLink>
+            </NavLink> */}
 
         </div>
     </section>

@@ -13,15 +13,22 @@ export const Header = () => {
         <h3> Create, Smash, Repeat!</h3>
 
         <div className="buttons-cont">
+          <a target='_blank' href='https://drive.google.com/drive/folders/1BiylXMbYbM_FFtpbQv8ShQo3aeCVtk7Z?usp=sharing'>
+
           <button className="btn">
             <span>download PC demo</span>
           </button>
+          </a>
 
-          <NavLink to={'beat-generation'}>
+          <button className='btn purple'>
+              <span>TRAILER</span>
+            </button>
+
+          {/* <NavLink to={'beat-generation'}>
             <button className='btn purple'>
               <span>GENERATE MUSIC</span>
             </button>
-          </NavLink>
+          </NavLink> */}
         </div>
       </div>
 
