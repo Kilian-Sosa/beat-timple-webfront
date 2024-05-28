@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useForm } from "../../hooks/useForm";
 import "./BeatForm.scss";
-import Mark from "../../interfaces/Mark";
 
 // interface BeatFormProps {
 //   mark: Mark;
@@ -10,7 +9,7 @@ import Mark from "../../interfaces/Mark";
 // }
 
 export const BeatForm: React.FC<any> = ({ mark, setMarks, marks }) => {
-  const [formValues, handleInputChange, reset] = useForm(mark);
+  const [formValues, handleInputChange] = useForm(mark);
 
   useEffect(() => {
     const existingIndex = marks.findIndex(

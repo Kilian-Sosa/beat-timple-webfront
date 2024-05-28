@@ -2,8 +2,8 @@ import { BeatCreationIntro } from "../components/BeatCreation/BeatCreationIntro/
 // import { BeatGenerator } from "../components/BeatCreation/BeatGenerator";
 import { useEffect, useState } from "react";
 import { BeatGeneratorManual } from "../components/BeatCreation/BeatGeneratorManual/BeatGeneratorManual";
-import { BeatGeneratorAutomatic } from "../components/BeatCreation/BeatGeneratorAutomatic/BeatGeneratorAutomatic";
-import { BeatGeneratorRandom } from "../components/BeatCreation/BeatGeneratorRandom/BeatGeneratorRandom";
+// import { BeatGeneratorAutomatic } from "../components/BeatCreation/BeatGeneratorAutomatic/BeatGeneratorAutomatic";
+// import { BeatGeneratorRandom } from "../components/BeatCreation/BeatGeneratorRandom/BeatGeneratorRandom";
 import "../styles/BeatCreation.scss";
 import { Info } from "../components/Shared/Icons/Info";
 import BeatCreationModal from "../components/BeatCreation/BeatCreationModal/BeatCreationModal";
@@ -27,7 +27,7 @@ export default function BeatCreation() {
   });
 
   const [infoColor, setInfoColor] = useState("#cec8e2");
-
+  setInfoColor("#cec8e2");
   useEffect(() => {
     const element = document.getElementById("generator");
     if (element) {

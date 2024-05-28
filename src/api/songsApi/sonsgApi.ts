@@ -13,6 +13,7 @@ class SongsApi {
 
   getAllSongs = async () => {
     const response:any = await this.instance.get(`${this.API_URL}/test`);
+    return response.data;
   };
 
   isAxiosError = (error:any) => axios.isAxiosError(error);
