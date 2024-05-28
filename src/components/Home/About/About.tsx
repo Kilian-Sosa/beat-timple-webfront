@@ -108,12 +108,6 @@ export const About = () => {
                             <h2>Isaac</h2>
                             <p>Studies composition at the Conservatorio Superior de Música de Canarias in Gran Canaria. He has composed music for both short films and video games using different musical styles.</p>
                             <div className="ssmm-cont">
-                                <a target='_blank' href="https://es.linkedin.com/in/abigail-ojeda">
-                                    <img src={linkedin} alt="linkedin" />
-                                </a>
-                                <a target='_blank' href="https://github.com/abigailojeda">
-                                    <img src={github} alt="github" />
-                                </a>
                             </div>
                         </div>
                        
