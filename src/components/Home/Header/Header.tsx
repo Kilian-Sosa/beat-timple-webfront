@@ -6,7 +6,7 @@ const logo: string = './assets/images/icons/logoNeonPink.svg'
 
 export const Header = () => {
 
-  const [showVideo, setShowVideo] = useState(true)
+  const [showVideo, setShowVideo] = useState(false)
 
   const onPlayerReady: YouTubeProps['onReady'] = (event) => {
     // access to player in all event handlers via event.target
