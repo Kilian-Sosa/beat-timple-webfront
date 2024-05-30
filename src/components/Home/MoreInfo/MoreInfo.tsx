@@ -13,7 +13,7 @@ export const MoreInfo = () => {
         <>
             <div className="info-cont">
                 <div className="info-content">
-                    <h1>HAVE YOU ANY QUESTION?</h1>
+                    <h1>ANY QUESTION?</h1>
 
                     <div className='text-container'>
                         <div className="img-cont">
